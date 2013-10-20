@@ -18,14 +18,14 @@ Background: comments have been added to database
   | Basic Algebra                    | Is it possible to show more examples?         |
   | Basic Algebra                    | Could anyone elaborate more on Q2?            |
   | English and the Language         | Thank you so much! You saved me life!         |
-  | Quantum Computing                | Hardcord stuff!!                              |
+  | Quantum Computing                | Hardcore stuff!!                              |
 
   And I am on the ForwardTutoring resource page
 
 Scenario: View all the comments under Basic Algebra
   When I go to "Basic Algebra" page
-  Then I should see the following comments: Very helpful!, Is it possible to show more examples?, Could anyone elaborate more on Q2?
-  And I should not see the following comments: Thank you so much! You saved me life!, Hardcord stuff!!
+  Then I should see the following comments: "Very helpful!", "Is it possible to show more examples?", "Could anyone elaborate more on Q2?"
+  And I should not see the following comments: "Thank you so much! You saved me life!", "Hardcore stuff!!"
 
 Scenario: View all the comments under Basic Algebra
   When I go to "World Geography for 7th Grade" page

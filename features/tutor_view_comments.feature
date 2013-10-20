@@ -4,6 +4,9 @@ Feature: Viewing Comment system for materials
   I want to read comments posted by users about my materials
 
 
-Scenario: Tutor View Comment
-
+Scenario: Tutor View any Comment
+  Given I am a Tutor
+  When I go to "Basic Algebra" page
+  Then I should see the following comments: "Very helpful!", "Is it possible to show more examples?", "Could anyone elaborate more on Q2?"
+  And I should not see the following comments: "Thank you so much! You saved me life!", "Hardcore stuff!!"
 

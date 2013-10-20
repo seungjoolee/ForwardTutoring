@@ -1,13 +1,13 @@
 Given /the following resources exist/ do |resources_table|
-	resources_table.hashes.each do |resource|
-		Resource.create!(resource)
-	end
+  resources_table.hashes.each do |resource|
+    Resource.create!(resource)
+  end
 end
 
 Given /the following comments exist/ do |comments_table|
-	comments_table.hashes.each do |comment|
-		Comment.create!(comment)
-	end
+  comments_table.hashes.each do |comment|
+    Comment.create!(comment)
+  end
 end
 
 Then /I should (not )?see the following resources: (.*)/ do |unseen, resource_list|
@@ -46,17 +46,18 @@ Then /I should (not )?see the following comments: (.*)/ do |unseen, comment_list
   end
 end
 
-Then /^I should see all the resources$/ do 
-	page.all("div#resources div.resource").count.should == 4
+Then /^I should see all the resources$/ do
+  page.all("div#resources div.resource").count.should == 4
 end
 
 Then /all the resources should be sorted by (.+)/ do |sort_option|
-	if sort_option = "rating"
-		index = "div.rating"
-	elsif sort_option = "release date"
-		index = "div.date"
-	else
-		raise ArgumentError, "Sorting Option Undefined: " + sort_option.to_s
-	end
-	list = page.all("div#resource #{index}")
-	assert list == list.sort {|x, y| y <=> x}
+  if sort_option == "rating"
+    index = "div.rating"
+  elsif sort_option == "release date"
+    index = "div.date"
+  else
+    raise ArgumentError, "Sorting Option Undefined: " + sort_option.to_s
+  end
+  list = page.all("div#resource #{index}")
+  assert list == list.sort {|x, y| y <=> x}
+end
