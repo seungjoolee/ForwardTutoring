@@ -1,3 +1,5 @@
+
+
 Given /the following resources exist/ do |resources_table|
   resources_table.hashes.each do |resource|
     Resource.create!(resource)
@@ -9,6 +11,28 @@ Given /the following comments exist/ do |comments_table|
     Comment.create!(comment)
   end
 end
+
+# When /I upload a file "(.*)"/ do |file|
+
+ # end
+
+
+
+Then /^I should (not )?see the "(.*)" resource$/ do |unseen, resource_list|  if unseen
+    if page.respond_to? :should
+      page.should have_no_content(resource)
+    else
+      assert page.has_no_content?(resource)
+    end
+  else
+    if page.respond_to? :should
+      page.should have_content(resource)
+    else
+      assert page.has_content?(resource)
+    end
+  end
+end
+
 
 Then /I should (not )?see the following resources: (.*)/ do |unseen, resource_list|
   resource_list.split(',').collect(&:strip).each do |resource|
