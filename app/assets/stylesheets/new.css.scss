@@ -4,6 +4,18 @@
     padding: 25px;
     background-color: white;
     border: 1px solid #CCC;
-    border-radius: 5px; 
+    border-radius: 5px;
+    .container-header {
+      font-size: 30px;
+      color: #0065AF;
+      font-family: Gudea, sans-serif, Arial, Verdana, Helvetica;
+      font-weight: bold;
+      padding-bottom: 15px;
+      letter-spacing: -1px;
+    }
+    input.form-control, textarea.form-control {
+      width: 50%;
+      min-width: 400px;
+    }
   }
 } 

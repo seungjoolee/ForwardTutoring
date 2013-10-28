@@ -15,6 +15,7 @@
 @import url("//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css");
 body {
     background-image: url(image_path('ft_body_bg.jpg')); 
+    background-attachment: fixed;
     #nav-container {
       padding-top: 20px;
       padding-left: 5px;

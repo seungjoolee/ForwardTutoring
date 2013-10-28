@@ -4,22 +4,20 @@
 %div#form-container.container
   %div.row
     %div#form-div.col-md-10.col-md-offset-1
-      = form_tag resources_path, :class => "form-horizontal" do
+      %div.container-header
+        Create Resource
+    
+      = form_tag resources_path do
         %div.form-group
-          = label :resource, :title, 'Title', :class => "col-lg-1 control-label"
-          %div.col-lg-5
-            = text_field :resource, 'title', :class => "form-control"
+          = label :resource, :title, 'Title', :class => "control-label"
+          = text_field :resource, 'title', :class => "form-control", :placeholder => "Algebra for 8th Grade"
         
         %div.form-group
-          = label :resource, :author, 'Author', :class => "col-lg-1 control-label"
-          %div.col-lg-5
-            = text_field :resource, 'author', :class => "form-control"
+          = label :resource, :author, 'Author', :class => "control-label"
+          = text_field :resource, 'author', :class => "form-control", :placeholder => "John Smith"
         
         %div.form-group
-          = label :resource, :summary, 'Summary', :class => "col-lg-1 control-label"
-          %div.col-lg-5
-            = text_field :resource, 'summary', :class => "form-control"
+          = label :resource, :summary, 'Summary', :class => "control-label"
+          = text_area :resource, 'summary', :class => "form-control", :rows => "3", :placeholder => "A short summary of your resource"
         
-        %div.form-group
-          %div.col-lg-offset-1.col-lg-5
-            = submit_tag 'Submit', :class => "btn btn-primary"
+        = submit_tag 'Submit', :class => "btn btn-primary"
