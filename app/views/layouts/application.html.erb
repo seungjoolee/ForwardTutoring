@@ -9,6 +9,23 @@
 </head>
 <body>
 
+  <div class="container">
+    <div class="row">
+      <div class="col-md-10 col-md-offset-1">
+        <div id="nav-container">
+          <div id="logo">
+            <%= link_to image_tag("forwardtutoring_qcl_logo.jpg"), resources_path %>
+          </div>
+          <div id="nav" class="pull-right">
+            <div class="option">
+              <%= link_to 'Create Resource', new_resource_path %>
+            </div>
+          </div>
+        </div>   
+      </div>
+    </div>
+  </div>
+
 <%= yield %>
 
 </body>
