@@ -5,14 +5,15 @@ Feature: Tutor Viewing resources
 
 Before
   Given the following Resources Exist: 
-  ["Google", "http://google.com"]
+| title      | description            |  release_date |
+| Google     | http://google.com
 
 Scenario: View Resources
   When I am on the Resources Page
   Then I should see the "Google" resource
 
-Scenario: Edit resources
-  When I am on the Resources Page
-  And I follow the "Edit Google Page"
-  Then I should be on the "Google edit resources" page
+#Scenario: Edit resources
+#  When I am on the Resources Page
+#  And I follow the "Edit Google Page"
+#  Then I should be on the "Google edit resources" page
 
