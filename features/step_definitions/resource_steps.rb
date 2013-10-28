@@ -18,7 +18,7 @@ end
 
 
 
-Then /^I should (not )?see the "(.*)" resource$/ do |unseen, resource_list|  if unseen
+Then /^I should (not )?see the "(.*)" resource$/ do |unseen, resource|  if unseen
     if page.respond_to? :should
       page.should have_no_content(resource)
     else

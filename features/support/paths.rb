@@ -13,6 +13,10 @@ module NavigationHelpers
   def path_to(page_name)
     case page_name
 
+    when /^the new resource page$/
+      new_resource_path
+
+
     when /^the Resources page$/
       resources_path
 

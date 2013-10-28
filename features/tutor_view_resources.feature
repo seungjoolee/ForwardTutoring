@@ -3,10 +3,10 @@ Feature: Tutor Viewing resources
  So that I can see the effectiveness of my own resources and improve them, I want to view and edit my current resources with the ratings from students.
 
 
-Before
+Background: resources table is populated
   Given the following Resources Exist: 
-| title      | description            |  release_date |
-| Google     | http://google.com
+| title      | description            |  summary      |
+| Google     | http://google.com      | A google site |
 
 Scenario: View Resources
   When I am on the Resources Page
