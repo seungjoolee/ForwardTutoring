@@ -1,0 +1,25 @@
+- content_for :stylesheets do
+  = stylesheet_link_tag 'new'
+
+%div#form-container.container
+  %div.row
+    %div#form-div.col-md-10.col-md-offset-1
+      = form_tag resources_path, :class => "form-horizontal" do
+        %div.form-group
+          = label :resource, :title, 'Title', :class => "col-lg-1 control-label"
+          %div.col-lg-5
+            = text_field :resource, 'title', :class => "form-control"
+        
+        %div.form-group
+          = label :resource, :author, 'Author', :class => "col-lg-1 control-label"
+          %div.col-lg-5
+            = text_field :resource, 'author', :class => "form-control"
+        
+        %div.form-group
+          = label :resource, :summary, 'Summary', :class => "col-lg-1 control-label"
+          %div.col-lg-5
+            = text_field :resource, 'summary', :class => "form-control"
+        
+        %div.form-group
+          %div.col-lg-offset-1.col-lg-5
+            = submit_tag 'Submit', :class => "btn btn-primary"

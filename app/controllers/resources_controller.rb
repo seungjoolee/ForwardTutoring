@@ -2,12 +2,15 @@ class ResourcesController < ApplicationController
   def index
     @resources = Resource.all
   end
-
+  
+  def new
+    #render "new" template
+  end
+  
   def create
-    @resource = Resource.new(resource_params)
+    @resource = Resource.create!(params[:resource])
    
-    @resource.save
-    redirect_to @resource
+    redirect_to resources_path
   end
 
   def show

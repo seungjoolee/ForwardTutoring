@@ -24,33 +24,15 @@
         
     %div.col-md-7
       %div#resources
-        %div.resource
-          %div.title 
-            %a{:href=>"/resources"} Basic Algebra
-          %div.rating <span>★</span><span>★</span><span>★</span><span>★</span><span>☆</span>
-          %div.date June 10, 2013
-          %div.author by: Michael Jordan
-          %div.summary Learn the ways of algebra with simple tips and tricks!
-        %div.resource
-          %div.title 
-            %a{:href=>"/resources"} English and the Language
-          %div.rating <span>★</span><span>★</span><span>☆</span><span>☆</span><span>☆</span>
-          %div.date July 11, 2013
-          %div.author by: Michael Jordan
-          %div.summary Learn the ways of algebra with simple tips and tricks!
-        %div.resource
-          %div.title 
-            %a{:href=>"/resources"} World Geography for 7th Grade
-          %div.rating <span>★</span><span>★</span><span>★</span><span>☆</span><span>☆</span>
-          %div.date Oct 12, 2013
-          %div.author by: Michael Jordan
-          %div.summary Learn the ways of algebra with simple tips and tricks!
-        %div.resource
-          %div.title 
-            %a{:href=>"/resources"} Quantum Computing
-          %div.rating <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
-          %div.date Nov 13, 2013
-          %div.author by: Michael Jordan
-          %div.summary Learn the ways of algebra with simple tips and tricks!
+        - @resources.each do |resource|
+          %div.resource
+            %div.title 
+              %a{:href=>"/resources"}= resource.title 
+            -#%div.rating <span>★</span><span>★</span><span>★</span><span>★</span><span>☆</span>
+            %div.date= resource.created_at
+            %div.author 
+              by:
+              = resource.author
+            %div.summary= resource.summary
           
     

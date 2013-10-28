@@ -15,5 +15,20 @@
 @import url("//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css");
 body {
     background-image: url(image_path('ft_body_bg.jpg')); 
+    #nav-container {
+      padding-top: 20px;
+      padding-left: 5px;
+      #logo {
+        display: inline-block;
+      }
+      #nav {
+        padding-top: 15px;
+        vertical-align: middle;
+        display: inline-block;
+        .option {
+          font-size: 18px;
+        }
+      }
+    }
 }
 
