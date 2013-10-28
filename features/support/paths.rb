@@ -14,8 +14,7 @@ module NavigationHelpers
     case page_name
 
     when /^the Resources page$/
-      "/resources"
-      #resources_path
+      resources_path
 
     when /^the edit page for "(.*)"/
       edit_resource_path(Resource.find_by_title($1))

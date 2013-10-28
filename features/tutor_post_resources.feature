@@ -6,7 +6,8 @@ Feature: Posting Study Materials
 Scenario:Post Link into Resources Page
 Given I am on the Resources page
 When I fill in "Title" with "Google"
-And I fill in "Description" with "http://google.com"
+And I fill in "Author" with "Jack"
+And I fill in "Summary" with "http://google.com"
 And I press "Add Link"
 Then I should see the "Google" resource
 
