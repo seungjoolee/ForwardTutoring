@@ -24,7 +24,7 @@ module NavigationHelpers
       edit_resource_path(Resource.find_by_title($1))
 
     when /^the details page for "(.*)"/
-      resource_path(Movie.find_by_title($1))
+      resource_path(Resource.find_by_title($1))
 
 
 
