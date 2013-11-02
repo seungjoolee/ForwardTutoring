@@ -5,16 +5,50 @@ Feature: Posting Study Materials
 
 Background: on the new resource page
   Given I am on the new resource page
+  
+Scenario: No title in new resources
+  When I fill in "resource_author" with "Jack" 
+  And I fill in "resource_summary" with "No link to google.com"
+  And I fill in "resource_link" with "http://www.google.com"
+  And I press "Submit"
+  Then I should see "Error: No Title for the new resource"
 
-Scenario:Post Link into Resources Page
+
+Scenario: Unsuccessfully Post Anything into Resources Page
+  When I fill in "resource_title" with "Google"
+  And I fill in "resource_author" with "Jack" 
+  And I fill in "resource_summary" with "No link to google.com"
+  And I press "Submit"
+  Then I should see "Error: No Link or file posted yet"
+
+Scenario:Successfully Post Link into Resources Page
   When I fill in "resource_title" with "Google"
   And I fill in "resource_author" with "Jack"
-  And I fill in "resource_summary" with "http://google.com"
+  And I fill in "resource_summary" with "a link to Google"
+  And I fill in "resource_link" with "http://www.google.com"
   And I press "Submit"
   Then I should be on the Resources page
   And I should see the "Google" resource
 
-Scenario:Post File into Resources Page
+
+Scenario: Successfully Post File into Resources Page
+  When I fill in "resource_title" with "Math File"
+  And I fill in "resource_author" with "Jack"
+  And I fill in "resource_summary" with "No link to google.com"
 When I fill in "Title" with "Math File"
-And I upload the file "Test File"
-Then I should see the "Math File" resource
+  And I upload the file "TestFile.pdf"
+  And I press "Submit"
+  Then I should see "Error: No Link or file posted yet"
+  
+
+Scenario: Post invalid File into Resources Page
+  When I fill in "resource_title" with "Math File"
+  And I fill in "resource_author" with "Jack"
+  And I fill in "resource_summary" with "No link to google.com"
+  When I fill in "Title" with "Math File"
+  And I upload the file "virus.exe"
+  And I press "Submit"
+  Then I should see "Error: Invalid uploaded File"
+
+
+  
