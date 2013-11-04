@@ -84,3 +84,7 @@ Then /all the resources should be sorted by (.+)/ do |sort_option|
   list = page.all("div#resource #{index}")
   assert list == list.sort {|x, y| y <=> x}
 end
+
+Then /I should see "(.*)"/ do |val|
+  page.body.should have_content(val)
+end
