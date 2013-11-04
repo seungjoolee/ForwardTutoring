@@ -19,5 +19,9 @@
         %div.form-group
           = label :resource, :summary, 'Summary', :class => "control-label"
           = text_area :resource, 'summary', :class => "form-control", :rows => "3", :placeholder => "A short summary of your resource"
+
+        %div.form-group
+          = label :resource, :link, 'Link', :class => "control-label"
+          = text_field :resource, 'link', :class => "form-control", :rows => "3", :placeholder => "A Link to the resource"
         
         = submit_tag 'Submit', :class => "btn btn-primary"

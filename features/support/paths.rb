@@ -13,6 +13,10 @@ module NavigationHelpers
   def path_to(page_name)
     case page_name
 
+    when /^the new resource page$/
+      new_resource_path
+
+
     when /^the Resources page$/
       resources_path
 
@@ -20,7 +24,7 @@ module NavigationHelpers
       edit_resource_path(Resource.find_by_title($1))
 
     when /^the details page for "(.*)"/
-      resource_path(Movie.find_by_title($1))
+      resource_path(Resource.find_by_title($1))
 
 
 
