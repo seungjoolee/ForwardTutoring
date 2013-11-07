@@ -11,17 +11,15 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20131104063528) do
+ActiveRecord::Schema.define(:version => 20131104060837) do
 
   create_table "resources", :force => true do |t|
     t.string   "title"
-    t.string   "author"
-    t.string   "summary"
+    t.string   "posted_by"
     t.text     "description"
     t.datetime "created_at",  :null => false
     t.datetime "updated_at",  :null => false
     t.string   "link"
-    t.string   "file"
   end
 
 end

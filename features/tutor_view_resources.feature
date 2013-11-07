@@ -4,7 +4,7 @@ Feature: Tutor Viewing resources
 
 Background: resources table is populated
   Given the following Resources Exist: 
-| title      | description            |  summary      |
+| title      | link            |  description |
 | Google     | http://google.com      | A google site |
 
 Scenario: View Resources

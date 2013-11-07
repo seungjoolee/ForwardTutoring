@@ -1,3 +1,3 @@
 class Resource < ActiveRecord::Base
-  attr_accessible :author, :summary, :title, :description, :link, :file
+  attr_accessible :title, :posted_by, :description, :link
 end

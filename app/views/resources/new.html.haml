@@ -13,12 +13,12 @@
           = text_field :resource, 'title', :class => "form-control", :placeholder => "Algebra for 8th Grade"
         
         %div.form-group
-          = label :resource, :author, 'Author', :class => "control-label"
-          = text_field :resource, 'author', :class => "form-control", :placeholder => "John Smith"
+          = label :resource, :posted_by, 'Posted by ', :class => "control-label"
+          = text_field :resource, 'posted_by', :class => "form-control", :placeholder => "John Smith"
         
         %div.form-group
-          = label :resource, :summary, 'Summary', :class => "control-label"
-          = text_area :resource, 'summary', :class => "form-control", :rows => "3", :placeholder => "A short summary of your resource"
+          = label :resource, :description, 'Description', :class => "control-label"
+          = text_area :resource, 'description', :class => "form-control", :rows => "3", :placeholder => "A short descrition of your resource"
 
         %div.form-group
           = label :resource, :link, 'Link', :class => "control-label"
