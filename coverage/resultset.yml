@@ -14,7 +14,7 @@ Cucumber Features:
     /home/saasbook/Desktop/ForwardTutoring/app/controllers/resources_controller.rb:
     - 1
     - 1
-    - 0
+    - 1
     - 
     - 
     - 1
@@ -41,7 +41,7 @@ Cucumber Features:
     - 1
     - 1
     - 
-  :created_at: 2013-11-07 14:03:45.196967386 -08:00
+  :created_at: 2013-11-07 15:33:18.649549314 -08:00
 ! '/home/saasbook/.rvm/gems/ruby-1.9.3-p448/bin/rspec ':
   :original_result:
     /home/saasbook/Desktop/ForwardTutoring/app/controllers/application_controller.rb:

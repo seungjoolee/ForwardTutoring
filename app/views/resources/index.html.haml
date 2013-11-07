@@ -27,7 +27,7 @@
         - @resources.each do |resource|
           %div.resource
             %div.title 
-              %a{:href=>"/resources"}= resource.title 
+              = link_to resource.title, resource_path(resource.id)
             -#%div.rating <span>★</span><span>★</span><span>★</span><span>★</span><span>☆</span>
             %div.date= resource.created_at
             %div.posted_by 

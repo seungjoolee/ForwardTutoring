@@ -1,9 +1,9 @@
 
-#Given /the following resources exist/ do |resources_table|
-#  resources_table.hashes.each do |resource|
-#    Resource.create!(resource)
-#  end
-#end
+Given /the following resources exist/ do |resources_table|
+  resources_table.hashes.each do |resource|
+    Resource.create!(resource)
+  end
+end
 
 #Given /the following comments exist/ do |comments_table|
 #  comments_table.hashes.each do |comment|

@@ -1,0 +1,16 @@
+%h2 Title: #{@resource.title}
+%h3 Description:
+%p#description= @resource.description
+
+
+%h3 Link 
+%p= @resource.link
+
+%h3 Posted By 
+%p= @resource.posted_by
+
+-# %li
+-#    Rating:
+-#    = @resource.reviews 
+
+= link_to 'Back to resources list', resources_path
