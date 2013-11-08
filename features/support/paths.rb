@@ -20,12 +20,14 @@ module NavigationHelpers
       new_resource_path
 
 
-    when /^the edit page for "(.*)"/
+    when /^the edit resource page for "(.*)"/
       edit_resource_path(Resource.find_by_title($1))
 
-    when /^the details page for "(.*)"/
+    when /^the details resource page for "(.*)"/
       resource_path(Resource.find_by_title($1))
 
+    when /the nonexistent details resource page/
+      '/resources/-1'
 
 
       # Add more mappings here.

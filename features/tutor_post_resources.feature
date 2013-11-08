@@ -11,7 +11,8 @@ Scenario: No title in new resources
   And I fill in "resource_description" with "No link to google.com"
   And I fill in "resource_link" with "http://www.google.com"
   And I press "Submit"
- # Then I should see "Error: No Title for the new resource"
+  Then I should see "There is no title for this resource yet"
+  And I should be 
 
 
 Scenario: Unsuccessfully Post Anything into Resources Page
@@ -19,7 +20,7 @@ Scenario: Unsuccessfully Post Anything into Resources Page
   And I fill in "resource_posted_by" with "Jack" 
   And I fill in "resource_description" with "No link to google.com"
   And I press "Submit"
- # Then I should see "Error: No Link or file posted yet"
+  Then I should see "There is no link for this resource yet"
 
 Scenario:Successfully Post Link into Resources Page
   When I fill in "resource_title" with "Google"
