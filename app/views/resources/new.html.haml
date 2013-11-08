@@ -1,6 +1,8 @@
 - content_for :stylesheets do
   = stylesheet_link_tag 'new'
 
+= @resource_hash
+
 - if flash[:notice]
   #notice.message= flash[:notice]
 
@@ -9,11 +11,11 @@
     %div#form-div.col-md-10.col-md-offset-1
       %div.container-header
         Create Resource
-    
+
       = form_tag resources_path do
         %div.form-group
           = label :resource, :title, 'Title', :class => "control-label"
-          = text_field :resource, 'title', :class => "form-control", :placeholder => "Algebra for 8th Grade", :value => @resource_hash[:title]
+          = text_field :resource, 'title', :class => "form-control", :placeholder => "Algebra for 8th Grade", :value => "#{@resource_hash[:title]}"
         
         %div.form-group
           = label :resource, :posted_by, 'Posted by ', :class => "control-label"
