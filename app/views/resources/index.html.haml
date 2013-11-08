@@ -1,6 +1,9 @@
 - content_for :stylesheets do
   = stylesheet_link_tag 'index'
 
+- if flash[:notice]
+  #notice.message= flash[:notice]
+
 %div.container#resources-container
   %div#search-row.row
     %form#search-form
