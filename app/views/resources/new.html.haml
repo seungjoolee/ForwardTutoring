@@ -20,6 +20,11 @@
           = text_field( :resource, 'posted_by', :class => "form-control", :placeholder => "John Smith", :value => "#{@resource_hash[:posted_by]}")
         
         %div.form-group
+          = label :resource, :category, 'Category', :class => "control-label"
+          = select :resource, 'category', [['Math', 'math'], ['Science', 'science']], {:class => "form-control"}
+
+
+        %div.form-group
           = label :resource, :description, 'Description', :class => "control-label"
           = text_area :resource, 'description', :class => "form-control", :rows => "3", :placeholder => "A short descrition of your resource", :value => @resource_hash[:description]
 

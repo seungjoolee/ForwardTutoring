@@ -11,7 +11,7 @@ Scenario: No title in new resources
   And I fill in "resource_description" with "No link to google.com"
   And I fill in "resource_link" with "http://www.google.com"
   And I press "Submit"
-  Then I should see "There is no title for this resource yet"
+  Then I should see "Title should not be blank"
   And I should be 
 
 
@@ -20,7 +20,7 @@ Scenario: Unsuccessfully Post Anything into Resources Page
   And I fill in "resource_posted_by" with "Jack" 
   And I fill in "resource_description" with "No link to google.com"
   And I press "Submit"
-  Then I should see "There is no link for this resource yet"
+  Then I should see "Link should not be blank
 
 Scenario:Successfully Post Link into Resources Page
   When I fill in "resource_title" with "Google"

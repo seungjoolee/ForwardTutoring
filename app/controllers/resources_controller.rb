@@ -1,30 +1,32 @@
 class ResourcesController < ApplicationController
   def index
-    #category = params[:category]
-    # @resources = Resource.where("category == #{category}")
-    @resources = Resource.all
+    if params[:category].nil?
+      @resources = Resource.all
+    else
+      category = params[:category]
+      @resources = Resource.where("category == #{category}")
+    end
   end
 
   def new
     #render "new" template
-      @resource_hash = Hash.new
-      @resource_hash[:title] = params[:title]
-      @resource_hash[:description] = params[:description]
-      @resource_hash[:posted_by] = params[:posted_by]
-      @resource_hash[:link] = params[:link]
+    @resource_hash = Hash.new
+    @resource_hash[:title] = params[:title]
+    @resource_hash[:description] = params[:description]
+    @resource_hash[:posted_by] = params[:posted_by]
+    @resource_hash[:link] = params[:link]
+    @resource_hash[:category] = params[:category]
+
   end
 
   def create
-    if params[:resource][:title].nil? or params[:resource][:title].empty?
-      flash[:notice] = "There is no title for this resource yet."
-      redirect_to new_resource_path(params[:resource]) and return
-    elsif params[:resource][:link].nil? or params[:resource][:link].empty?
-        flash[:notice] = "There is no link for this resource yet."
+    @resource = Resource.new(params[:resource])
+    if !@resource.valid?
+        flash[:notice] = @resource.errors.full_messages
         redirect_to new_resource_path(params[:resource]) and return
    else
-    @resource = Resource.create!(params[:resource])
-    #redirect_to resource_path(@resource.id)
-    redirect_to resources_path
+      #redirect_to resource_path(@resource.id)
+      redirect_to resources_path
     end
   end
 
