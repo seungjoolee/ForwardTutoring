@@ -86,5 +86,5 @@ Then /all the resources should be sorted by (.+)/ do |sort_option|
 end
 
 Then /I should see "(.*)"/ do |val|
-  page.body.should have_content(val)
+  page.should have_content(val)
 end
