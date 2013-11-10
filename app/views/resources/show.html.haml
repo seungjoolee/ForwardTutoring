@@ -16,5 +16,34 @@
 -# %li
 -#    Rating:
 -#    = @resource.reviews 
+%h3 Reviews
+- @reviews.each do |review|
+	%p#user = review.user
+	%p#rating = review.rating
+	%p#content = review.content
+	%p#anonymous = review.anonymous
+
+%h3 Add a review:
+= form_for @resource, @resource.reviews.build do |f|
+	%p
+		= f.label :user
+		%br
+		= f.text_field
+	%p
+		= f.label :rating
+		%br
+		= f.radio_button :rating, '1'
+		= f.radio_button :rating, '2'
+		= f.radio_button :rating, '3'
+	%p
+		= f.label :content
+		%br
+		= f.text_field
+	%p
+		= f.label :anonymous
+		%br
+		= f.check_box :anonymous
+	%p.button
+		= f.submit
 
 = link_to 'Back to resources list', resources_path
