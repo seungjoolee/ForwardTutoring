@@ -21,21 +21,21 @@
       <img src="./assets/0.4.5/loading.gif" alt="loading"/>
     </div>
     <div id="wrapper" style="display:none;">
-      <div class="timestamp">Generated <abbr class="timeago" title="2013-11-08T12:36:23-08:00">2013-11-08T12:36:23-08:00</abbr></div>
+      <div class="timestamp">Generated <abbr class="timeago" title="2013-11-09T16:46:42-08:00">2013-11-09T16:46:42-08:00</abbr></div>
       <ul class="group_tabs"></ul>
 
       <div id="content">
         <div class="file_list_container" id="AllFiles">
   <h2>
     All Files
-    (<span class="yellow">84.38%</span>)
+    (<span class="red">80.0%</span>)
   </h2>
   <a name="AllFiles"></a>
   <div>
     <b>5</b> files in total.
-    <b>32</b> relevant lines. 
-    <span class="green"><b>27</b> lines covered</span> and
-    <span class="red"><b>5</b> lines missed </span>
+    <b>35</b> relevant lines. 
+    <span class="green"><b>28</b> lines covered</span> and
+    <span class="red"><b>7</b> lines missed </span>
   </div>
   <table class="file_list">
     <thead>
@@ -61,11 +61,11 @@
       
       <tr>
         <td><a href="#1e9c690ba2a9fce034f6c00f088fe2d4844a7e92" class="src_link" title="./app/controllers/resources_controller.rb">./app/controllers/resources_controller.rb</a></td>
-        <td class="yellow">80.77 %</td>
-        <td>45</td>
-        <td>26</td>
+        <td class="red">75.0 %</td>
+        <td>48</td>
+        <td>28</td>
         <td>21</td>
-        <td>5</td>
+        <td>7</td>
       </tr>
       
       <tr>
@@ -89,9 +89,9 @@
       <tr>
         <td><a href="#53ab22f81fb14e2bc60465e5b61b0505ee1a5fe0" class="src_link" title="./app/models/resource.rb">./app/models/resource.rb</a></td>
         <td class="green">100.0 %</td>
+        <td>4</td>
         <td>3</td>
-        <td>2</td>
-        <td>2</td>
+        <td>3</td>
         <td>0</td>
       </tr>
       
@@ -103,14 +103,14 @@
           <div class="file_list_container" id="Controllers">
   <h2>
     Controllers
-    (<span class="yellow">82.14%</span>)
+    (<span class="red">76.67%</span>)
   </h2>
   <a name="Controllers"></a>
   <div>
     <b>2</b> files in total.
-    <b>28</b> relevant lines. 
+    <b>30</b> relevant lines. 
     <span class="green"><b>23</b> lines covered</span> and
-    <span class="red"><b>5</b> lines missed </span>
+    <span class="red"><b>7</b> lines missed </span>
   </div>
   <table class="file_list">
     <thead>
@@ -136,11 +136,11 @@
       
       <tr>
         <td><a href="#1e9c690ba2a9fce034f6c00f088fe2d4844a7e92" class="src_link" title="./app/controllers/resources_controller.rb">./app/controllers/resources_controller.rb</a></td>
-        <td class="yellow">80.77 %</td>
-        <td>45</td>
-        <td>26</td>
+        <td class="red">75.0 %</td>
+        <td>48</td>
+        <td>28</td>
         <td>21</td>
-        <td>5</td>
+        <td>7</td>
       </tr>
       
     </tbody>
@@ -155,8 +155,8 @@
   <a name="Models"></a>
   <div>
     <b>1</b> files in total.
-    <b>2</b> relevant lines. 
-    <span class="green"><b>2</b> lines covered</span> and
+    <b>3</b> relevant lines. 
+    <span class="green"><b>3</b> lines covered</span> and
     <span class="red"><b>0</b> lines missed </span>
   </div>
   <table class="file_list">
@@ -175,9 +175,9 @@
       <tr>
         <td><a href="#53ab22f81fb14e2bc60465e5b61b0505ee1a5fe0" class="src_link" title="./app/models/resource.rb">./app/models/resource.rb</a></td>
         <td class="green">100.0 %</td>
+        <td>4</td>
         <td>3</td>
-        <td>2</td>
-        <td>2</td>
+        <td>3</td>
         <td>0</td>
       </tr>
       
@@ -366,7 +366,7 @@
     <tr>
       <td colspan="3">
         <h3>./app/controllers/resources_controller.rb</h3>
-        <h4><span class="yellow">80.77 %</span> covered</h4>
+        <h4><span class="red">75.0 %</span> covered</h4>
       </td>
     </tr>
     <tr>
@@ -404,38 +404,25 @@
     </tr>
   
     
-    <tr class="never" >
+    <tr class="hit" data-hits="1">
       <td class="line_number">
         <pre>3</pre>
       </td>
       <td>
-        <pre>    #category = params[:category]</pre>
+        <pre>    if params[:category].nil?</pre>
       </td>
       <td class="hits">
-        
-      </td>
-    </tr>
-  
-    
-    <tr class="never" >
-      <td class="line_number">
-        <pre>4</pre>
-      </td>
-      <td>
-        <pre>    # @resources = Resource.where(&quot;category == #{category}&quot;)</pre>
-      </td>
-      <td class="hits">
-        
+        1
       </td>
     </tr>
   
     
     <tr class="hit" data-hits="1">
       <td class="line_number">
-        <pre>5</pre>
+        <pre>4</pre>
       </td>
       <td>
-        <pre>    @resources = Resource.all</pre>
+        <pre>      @resources = Resource.all</pre>
       </td>
       <td class="hits">
         1
@@ -445,7 +432,59 @@
     
     <tr class="never" >
       <td class="line_number">
+        <pre>5</pre>
+      </td>
+      <td>
+        <pre>    else</pre>
+      </td>
+      <td class="hits">
+        
+      </td>
+    </tr>
+  
+    
+    <tr class="miss" data-hits="0">
+      <td class="line_number">
         <pre>6</pre>
+      </td>
+      <td>
+        <pre>      category = params[:category]</pre>
+      </td>
+      <td class="hits">
+        0
+      </td>
+    </tr>
+  
+    
+    <tr class="miss" data-hits="0">
+      <td class="line_number">
+        <pre>7</pre>
+      </td>
+      <td>
+        <pre>      @resources = Resource.where(&quot;category == #{category}&quot;)</pre>
+      </td>
+      <td class="hits">
+        0
+      </td>
+    </tr>
+  
+    
+    <tr class="never" >
+      <td class="line_number">
+        <pre>8</pre>
+      </td>
+      <td>
+        <pre>    end</pre>
+      </td>
+      <td class="hits">
+        
+      </td>
+    </tr>
+  
+    
+    <tr class="never" >
+      <td class="line_number">
+        <pre>9</pre>
       </td>
       <td>
         <pre>  end</pre>
@@ -458,7 +497,7 @@
     
     <tr class="never" >
       <td class="line_number">
-        <pre>7</pre>
+        <pre>10</pre>
       </td>
       <td>
         <pre></pre>
@@ -471,7 +510,7 @@
     
     <tr class="hit" data-hits="1">
       <td class="line_number">
-        <pre>8</pre>
+        <pre>11</pre>
       </td>
       <td>
         <pre>  def new</pre>
@@ -484,7 +523,7 @@
     
     <tr class="never" >
       <td class="line_number">
-        <pre>9</pre>
+        <pre>12</pre>
       </td>
       <td>
         <pre>    #render &quot;new&quot; template</pre>
@@ -497,49 +536,10 @@
     
     <tr class="hit" data-hits="5">
       <td class="line_number">
-        <pre>10</pre>
-      </td>
-      <td>
-        <pre>      @resource_hash = Hash.new</pre>
-      </td>
-      <td class="hits">
-        5
-      </td>
-    </tr>
-  
-    
-    <tr class="hit" data-hits="5">
-      <td class="line_number">
-        <pre>11</pre>
-      </td>
-      <td>
-        <pre>      @resource_hash[:title] = params[:title]</pre>
-      </td>
-      <td class="hits">
-        5
-      </td>
-    </tr>
-  
-    
-    <tr class="hit" data-hits="5">
-      <td class="line_number">
-        <pre>12</pre>
-      </td>
-      <td>
-        <pre>      @resource_hash[:description] = params[:description]</pre>
-      </td>
-      <td class="hits">
-        5
-      </td>
-    </tr>
-  
-    
-    <tr class="hit" data-hits="5">
-      <td class="line_number">
         <pre>13</pre>
       </td>
       <td>
-        <pre>      @resource_hash[:posted_by] = params[:posted_by]</pre>
+        <pre>    @resource_hash = Hash.new</pre>
       </td>
       <td class="hits">
         5
@@ -552,7 +552,59 @@
         <pre>14</pre>
       </td>
       <td>
-        <pre>      @resource_hash[:link] = params[:link]</pre>
+        <pre>    @resource_hash[:title] = params[:title]</pre>
+      </td>
+      <td class="hits">
+        5
+      </td>
+    </tr>
+  
+    
+    <tr class="hit" data-hits="5">
+      <td class="line_number">
+        <pre>15</pre>
+      </td>
+      <td>
+        <pre>    @resource_hash[:description] = params[:description]</pre>
+      </td>
+      <td class="hits">
+        5
+      </td>
+    </tr>
+  
+    
+    <tr class="hit" data-hits="5">
+      <td class="line_number">
+        <pre>16</pre>
+      </td>
+      <td>
+        <pre>    @resource_hash[:posted_by] = params[:posted_by]</pre>
+      </td>
+      <td class="hits">
+        5
+      </td>
+    </tr>
+  
+    
+    <tr class="hit" data-hits="5">
+      <td class="line_number">
+        <pre>17</pre>
+      </td>
+      <td>
+        <pre>    @resource_hash[:link] = params[:link]</pre>
+      </td>
+      <td class="hits">
+        5
+      </td>
+    </tr>
+  
+    
+    <tr class="hit" data-hits="5">
+      <td class="line_number">
+        <pre>18</pre>
+      </td>
+      <td>
+        <pre>    @resource_hash[:category] = params[:category]</pre>
       </td>
       <td class="hits">
         5
@@ -562,7 +614,20 @@
     
     <tr class="never" >
       <td class="line_number">
-        <pre>15</pre>
+        <pre>19</pre>
+      </td>
+      <td>
+        <pre></pre>
+      </td>
+      <td class="hits">
+        
+      </td>
+    </tr>
+  
+    
+    <tr class="never" >
+      <td class="line_number">
+        <pre>20</pre>
       </td>
       <td>
         <pre>  end</pre>
@@ -575,7 +640,7 @@
     
     <tr class="never" >
       <td class="line_number">
-        <pre>16</pre>
+        <pre>21</pre>
       </td>
       <td>
         <pre></pre>
@@ -588,7 +653,7 @@
     
     <tr class="hit" data-hits="1">
       <td class="line_number">
-        <pre>17</pre>
+        <pre>22</pre>
       </td>
       <td>
         <pre>  def create</pre>
@@ -601,10 +666,10 @@
     
     <tr class="hit" data-hits="3">
       <td class="line_number">
-        <pre>18</pre>
+        <pre>23</pre>
       </td>
       <td>
-        <pre>    if params[:resource][:title].nil? or params[:resource][:title].empty?</pre>
+        <pre>    @resource = Resource.new(params[:resource])</pre>
       </td>
       <td class="hits">
         3
@@ -612,38 +677,25 @@
     </tr>
   
     
-    <tr class="hit" data-hits="1">
+    <tr class="hit" data-hits="3">
       <td class="line_number">
-        <pre>19</pre>
+        <pre>24</pre>
       </td>
       <td>
-        <pre>      flash[:notice] = &quot;There is no title for this resource yet.&quot;</pre>
+        <pre>    if !@resource.valid?</pre>
       </td>
       <td class="hits">
-        1
-      </td>
-    </tr>
-  
-    
-    <tr class="hit" data-hits="1">
-      <td class="line_number">
-        <pre>20</pre>
-      </td>
-      <td>
-        <pre>      redirect_to new_resource_path(params[:resource]) and return</pre>
-      </td>
-      <td class="hits">
-        1
+        3
       </td>
     </tr>
   
     
     <tr class="hit" data-hits="2">
       <td class="line_number">
-        <pre>21</pre>
+        <pre>25</pre>
       </td>
       <td>
-        <pre>    elsif params[:resource][:link].nil? or params[:resource][:link].empty?</pre>
+        <pre>        flash[:notice] = @resource.errors.full_messages</pre>
       </td>
       <td class="hits">
         2
@@ -651,35 +703,22 @@
     </tr>
   
     
-    <tr class="hit" data-hits="1">
+    <tr class="hit" data-hits="2">
       <td class="line_number">
-        <pre>22</pre>
-      </td>
-      <td>
-        <pre>        flash[:notice] = &quot;There is no link for this resource yet.&quot;</pre>
-      </td>
-      <td class="hits">
-        1
-      </td>
-    </tr>
-  
-    
-    <tr class="hit" data-hits="1">
-      <td class="line_number">
-        <pre>23</pre>
+        <pre>26</pre>
       </td>
       <td>
         <pre>        redirect_to new_resource_path(params[:resource]) and return</pre>
       </td>
       <td class="hits">
-        1
+        2
       </td>
     </tr>
   
     
     <tr class="never" >
       <td class="line_number">
-        <pre>24</pre>
+        <pre>27</pre>
       </td>
       <td>
         <pre>   else</pre>
@@ -690,25 +729,12 @@
     </tr>
   
     
-    <tr class="hit" data-hits="1">
-      <td class="line_number">
-        <pre>25</pre>
-      </td>
-      <td>
-        <pre>    @resource = Resource.create!(params[:resource])</pre>
-      </td>
-      <td class="hits">
-        1
-      </td>
-    </tr>
-  
-    
     <tr class="never" >
       <td class="line_number">
-        <pre>26</pre>
+        <pre>28</pre>
       </td>
       <td>
-        <pre>    #redirect_to resource_path(@resource.id)</pre>
+        <pre>      #redirect_to resource_path(@resource.id)</pre>
       </td>
       <td class="hits">
         
@@ -718,10 +744,23 @@
     
     <tr class="hit" data-hits="1">
       <td class="line_number">
-        <pre>27</pre>
+        <pre>29</pre>
       </td>
       <td>
-        <pre>    redirect_to resources_path</pre>
+        <pre>      @resource.save!</pre>
+      </td>
+      <td class="hits">
+        1
+      </td>
+    </tr>
+  
+    
+    <tr class="hit" data-hits="1">
+      <td class="line_number">
+        <pre>30</pre>
+      </td>
+      <td>
+        <pre>      redirect_to resources_path</pre>
       </td>
       <td class="hits">
         1
@@ -731,7 +770,7 @@
     
     <tr class="never" >
       <td class="line_number">
-        <pre>28</pre>
+        <pre>31</pre>
       </td>
       <td>
         <pre>    end</pre>
@@ -744,7 +783,7 @@
     
     <tr class="never" >
       <td class="line_number">
-        <pre>29</pre>
+        <pre>32</pre>
       </td>
       <td>
         <pre>  end</pre>
@@ -757,7 +796,7 @@
     
     <tr class="never" >
       <td class="line_number">
-        <pre>30</pre>
+        <pre>33</pre>
       </td>
       <td>
         <pre></pre>
@@ -770,7 +809,7 @@
     
     <tr class="hit" data-hits="1">
       <td class="line_number">
-        <pre>31</pre>
+        <pre>34</pre>
       </td>
       <td>
         <pre>  def show</pre>
@@ -783,7 +822,7 @@
     
     <tr class="miss" data-hits="0">
       <td class="line_number">
-        <pre>32</pre>
+        <pre>35</pre>
       </td>
       <td>
         <pre>    begin</pre>
@@ -796,7 +835,7 @@
     
     <tr class="miss" data-hits="0">
       <td class="line_number">
-        <pre>33</pre>
+        <pre>36</pre>
       </td>
       <td>
         <pre>    @resource = Resource.find(params[:id])</pre>
@@ -809,7 +848,7 @@
     
     <tr class="never" >
       <td class="line_number">
-        <pre>34</pre>
+        <pre>37</pre>
       </td>
       <td>
         <pre>    rescue</pre>
@@ -822,7 +861,7 @@
     
     <tr class="miss" data-hits="0">
       <td class="line_number">
-        <pre>35</pre>
+        <pre>38</pre>
       </td>
       <td>
         <pre>      flash[:notice] = &quot;This resource does not exist&quot;</pre>
@@ -835,7 +874,7 @@
     
     <tr class="miss" data-hits="0">
       <td class="line_number">
-        <pre>36</pre>
+        <pre>39</pre>
       </td>
       <td>
         <pre>      redirect_to resources_path</pre>
@@ -848,7 +887,7 @@
     
     <tr class="never" >
       <td class="line_number">
-        <pre>37</pre>
+        <pre>40</pre>
       </td>
       <td>
         <pre>    end</pre>
@@ -861,7 +900,7 @@
     
     <tr class="never" >
       <td class="line_number">
-        <pre>38</pre>
+        <pre>41</pre>
       </td>
       <td>
         <pre>  end</pre>
@@ -874,7 +913,7 @@
     
     <tr class="never" >
       <td class="line_number">
-        <pre>39</pre>
+        <pre>42</pre>
       </td>
       <td>
         <pre></pre>
@@ -887,7 +926,7 @@
     
     <tr class="hit" data-hits="1">
       <td class="line_number">
-        <pre>40</pre>
+        <pre>43</pre>
       </td>
       <td>
         <pre>  private</pre>
@@ -900,7 +939,7 @@
     
     <tr class="hit" data-hits="1">
       <td class="line_number">
-        <pre>41</pre>
+        <pre>44</pre>
       </td>
       <td>
         <pre>    def resource_params</pre>
@@ -913,7 +952,7 @@
     
     <tr class="miss" data-hits="0">
       <td class="line_number">
-        <pre>42</pre>
+        <pre>45</pre>
       </td>
       <td>
         <pre>      params.require(:resource).permit(:title, :description, :downloads)</pre>
@@ -926,7 +965,7 @@
     
     <tr class="never" >
       <td class="line_number">
-        <pre>43</pre>
+        <pre>46</pre>
       </td>
       <td>
         <pre>    end</pre>
@@ -939,7 +978,7 @@
     
     <tr class="never" >
       <td class="line_number">
-        <pre>44</pre>
+        <pre>47</pre>
       </td>
       <td>
         <pre></pre>
@@ -952,7 +991,7 @@
     
     <tr class="never" >
       <td class="line_number">
-        <pre>45</pre>
+        <pre>48</pre>
       </td>
       <td>
         <pre>end</pre>
@@ -1104,9 +1143,22 @@
     </tr>
   
     
-    <tr class="never" >
+    <tr class="hit" data-hits="1">
       <td class="line_number">
         <pre>3</pre>
+      </td>
+      <td>
+        <pre>  validates_presence_of :title, :link, :category, {:message =&gt; &quot;should not be blank&quot;}</pre>
+      </td>
+      <td class="hits">
+        1
+      </td>
+    </tr>
+  
+    
+    <tr class="never" >
+      <td class="line_number">
+        <pre>4</pre>
       </td>
       <td>
         <pre>end</pre>
