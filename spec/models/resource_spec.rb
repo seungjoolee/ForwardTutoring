@@ -1,17 +1,49 @@
 require 'spec_helper'
 describe Resource do
 
-  it "should error with a nil title", pending: true do
-    resource_hash = {title: "", author: "Kent", link: "google.com"}
-    lambda {Resource.create!(resource_hash)}.should raise_error(ValidationError)
-  end
-
-  it "should error with a blank title", pending: true do
-    resource_hash = {title: "", author: "Kent", link: "google.com"}
-    lambda {Resource.create!(resource_hash)}.should raise_error(ValidationError)
+  describe "new" do
+    before do
+      @resource_hash = {title: "Algebra", posted_by: "Kent", link: "google.com", category: "math"}
     end
 
-  it "should error with a blank link or file"
-   it "should pick only 1 of the link or the file"
+    it "should error with a nil title" do
+      empty_title = Hash.new(@resource_hash)
+      empty_title.delete(:title)
+      resource = Resource.new(empty_title)
+      resource.should_not be_valid
+  end
 
+    it "should error with a blank title" do
+      empty_title = Hash.new(@resource_hash)
+      empty_title[:title] = ""
+      resource = Resource.new(empty_title)
+      resource.should_not be_valid
+    end
+
+it "should error without a category" do
+      empty_title = Hash.new(@resource_hash)
+      empty_title.delete(:category)
+      resource = Resource.new(empty_title)
+      resource.should_not be_valid
+    end
+
+
+    it "should error with a blank link or file" do
+      empty_title = Hash.new(@resource_hash)
+      empty_title.delete(:link)
+      resource = Resource.new(empty_title)
+      resource.should_not be_valid
+    end
+
+    it "should pick only 1 of the link or the file"
+  end
+
+  describe "belonging to a topic" do
+    it "should belong to a topic"
+    it "should return resources where topic is under the category"
+  end
+
+  describe "having many reviews" do
+    it "should return reviews that belong to it"
+  end
 end
