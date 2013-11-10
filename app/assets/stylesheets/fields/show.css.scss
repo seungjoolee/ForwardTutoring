@@ -1,0 +1,20 @@
+#fields-container {
+  margin-top: 25px;
+  #field-wrapper {
+    background-color: white;
+    border: 1px solid #e6e6e6;
+    padding: 20px 30px;
+    #field-title {
+      font-size: 30px;
+      font-family: 'Open Sans';
+      font-weight: 300;
+    }
+    #topics-block {
+      padding-left: 25px;
+      .topic {
+        font-size: 20px;
+        font-weight: 300;
+      }
+    }
+  }
+}

@@ -85,6 +85,11 @@ Then /all the resources should be sorted by (.+)/ do |sort_option|
   assert list == list.sort {|x, y| y <=> x}
 end
 
-Then /I should see "(.*)"/ do |val|
+Then /I should see in the header "(.*)"/ do |val|
   page.should have_content(val)
+end
+
+
+Then /I should see in "(.*)", "(.*)"/ do |field, val|
+  find_field(field).value.should == val
 end
