@@ -12,6 +12,9 @@ Forwardtutoring::Application.routes.draw do
 
   # Sample resource route (maps HTTP verbs to controller actions automatically):
   #   resources :products
+  resources :subjects
+  resources :fields
+  resources :topics
   resources :resources
 
   # Sample resource route with options:

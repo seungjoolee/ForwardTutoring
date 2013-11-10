@@ -1,0 +1,29 @@
+#topic-container {
+  margin-top: 25px;
+  #topic-wrapper {
+    background-color: white;
+    border: 1px solid #e6e6e6;
+    padding: 20px 30px;
+    #topic-title{
+      font-size: 35px;
+      margin-bottom: 10px;
+      font-family: 'Open Sans';
+      font-weight: 300;
+    }
+    #topics-description {
+      
+    }
+    #resources-container {
+      #resources-title {
+        font-size: 20px;
+      }
+      #resources-block {
+        .resource {
+          .title {
+            
+          }
+        }
+      }
+    }
+  }
+}
