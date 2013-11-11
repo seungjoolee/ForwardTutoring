@@ -28,6 +28,12 @@
                   %a{:href=> topic_path(topic)}
                     = topic.title
               %div.panel-body
-                Mixed Numbers, Imaginary Numbers, FOIL
+                - topic.resources.each do |resource|
+                  - if resource != topic.resources[-1]
+                    =resource.title + ","
+                  - else
+                    =resource.title
+                - if topic.resources.empty?
+                  %span.no-resources No resources available.
 
           

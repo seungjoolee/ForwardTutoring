@@ -25,9 +25,9 @@ class ResourcesController < ApplicationController
         flash[:notice] = @resource.errors.full_messages
         redirect_to new_resource_path(params[:resource]) and return
    else
-      #redirect_to resource_path(@resource.id)
       @resource.save!
       redirect_to resources_path
+      #redirect_to resource_path(@resource)
     end
   end
 
