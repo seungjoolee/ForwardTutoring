@@ -1,5 +1,8 @@
 require 'spec_helper'
 
-describe Subject do
-  pending "add some examples to (or delete) #{__FILE__}"
+#describe Subject do
+#  describe "new" do
+#    before do
+
+
 end
