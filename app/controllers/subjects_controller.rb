@@ -10,7 +10,7 @@ class SubjectsController < ApplicationController
   def create
     #@subject = Subject.create!(params[:resource])
    
-    redirect_to subjects_path
+    #redirect_to subjects_path
   end
 
   def show
