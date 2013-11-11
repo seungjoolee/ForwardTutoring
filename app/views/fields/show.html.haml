@@ -1,0 +1,21 @@
+- content_for :stylesheets do
+  = stylesheet_link_tag 'fields/show'
+
+%div.container#fields-container
+  %div.row
+    %div.col-md-11.col-md-offset-1
+      %ol.breadcrumb
+        %li 
+          %a{:href=>"#"} Math
+        %li.active Algebra
+      %div#field-wrapper
+        %div#field-title
+          Algebra
+        %div#topics-block
+          %div.topic
+            %a{:href=>"/topics/1"} Factoring
+          %div.topic
+            %a{:href=>"/topics/1"} Factoring
+          %div.topic
+            %a{:href=>"/topics/1"} Factoring
+        

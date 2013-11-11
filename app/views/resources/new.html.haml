@@ -1,23 +1,37 @@
 - content_for :stylesheets do
   = stylesheet_link_tag 'new'
 
+- if flash[:notice]
+  #notice.message= flash[:notice]
+
 %div#form-container.container
   %div.row
     %div#form-div.col-md-10.col-md-offset-1
       %div.container-header
         Create Resource
-    
+
       = form_tag resources_path do
         %div.form-group
           = label :resource, :title, 'Title', :class => "control-label"
-          = text_field :resource, 'title', :class => "form-control", :placeholder => "Algebra for 8th Grade"
+          = text_field :resource, 'title', :class => "form-control", :placeholder => "Algebra for 8th Grade", :value => "#{@resource_hash[:title]}"
         
         %div.form-group
-          = label :resource, :author, 'Author', :class => "control-label"
-          = text_field :resource, 'author', :class => "form-control", :placeholder => "John Smith"
+          = label :resource, :posted_by, 'Posted by ', :class => "control-label"
+          = text_field( :resource, 'posted_by', :class => "form-control", :placeholder => "John Smith", :value => "#{@resource_hash[:posted_by]}")
         
         %div.form-group
-          = label :resource, :summary, 'Summary', :class => "control-label"
-          = text_area :resource, 'summary', :class => "form-control", :rows => "3", :placeholder => "A short summary of your resource"
+          = label :resource, :category, 'Category', :class => "control-label"
+          = select :resource, 'category', [['Math', 'math'], ['Science', 'science']], {:class => "form-control"}
+
+
+        %div.form-group
+          = label :resource, :description, 'Description', :class => "control-label"
+          = text_area :resource, 'description', :class => "form-control", :rows => "3", :placeholder => "A short descrition of your resource", :value => @resource_hash[:description]
+
+        %div.form-group
+          = label :resource, :link, 'Link', :class => "control-label"
+          = text_field :resource, 'link', :class => "form-control", :rows => "3", :placeholder => "A Link to the resource", :value => @resource_hash[:link]
         
         = submit_tag 'Submit', :class => "btn btn-primary"
+
+        = link_to 'Back to Resources', resources_path

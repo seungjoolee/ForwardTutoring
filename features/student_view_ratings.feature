@@ -12,7 +12,7 @@ Background: comments have been added to database
   | World Geography for 7th Grade    | Null     | 3      | 12-Oct-2013  |
   | Quantum Computing                | Null     | 5      | 13-Nov-2013  |
 
-  Given the following comments exist:
+  Given the following ratings exist:
   | title                            | comments                                      |
   | Basic Algebra                    | Very helpful!                                 |
   | Basic Algebra                    | Is it possible to show more examples?         |

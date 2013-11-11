@@ -1,16 +1,15 @@
 
-
 Given /the following resources exist/ do |resources_table|
   resources_table.hashes.each do |resource|
     Resource.create!(resource)
   end
 end
 
-Given /the following comments exist/ do |comments_table|
-  comments_table.hashes.each do |comment|
-    Comment.create!(comment)
-  end
-end
+#Given /the following comments exist/ do |comments_table|
+#  comments_table.hashes.each do |comment|
+#    Comment.create!(comment)
+#  end
+#end
 
 # When /I upload a file "(.*)"/ do |file|
 
@@ -18,7 +17,7 @@ end
 
 
 
-Then /^I should (not )?see the "(.*)" resource$/ do |unseen, resource_list|  if unseen
+Then /^I should (not )?see the "(.*)" resource$/ do |unseen, resource|  if unseen
     if page.respond_to? :should
       page.should have_no_content(resource)
     else
@@ -84,4 +83,13 @@ Then /all the resources should be sorted by (.+)/ do |sort_option|
   end
   list = page.all("div#resource #{index}")
   assert list == list.sort {|x, y| y <=> x}
+end
+
+Then /I should see in the header "(.*)"/ do |val|
+  page.should have_content(val)
+end
+
+
+Then /I should see in "(.*)", "(.*)"/ do |field, val|
+  find_field(field).value.should == val
 end

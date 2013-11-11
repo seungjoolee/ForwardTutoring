@@ -1,6 +1,9 @@
 - content_for :stylesheets do
   = stylesheet_link_tag 'index'
 
+- if flash[:notice]
+  #notice.message= flash[:notice]
+
 %div.container#resources-container
   %div#search-row.row
     %form#search-form
@@ -27,12 +30,12 @@
         - @resources.each do |resource|
           %div.resource
             %div.title 
-              %a{:href=>"/resources"}= resource.title 
+              = link_to resource.title, resource_path(resource.id)
             -#%div.rating <span>★</span><span>★</span><span>★</span><span>★</span><span>☆</span>
             %div.date= resource.created_at
-            %div.author 
+            %div.posted_by 
               by:
-              = resource.author
-            %div.summary= resource.summary
+              = resource.posted_by
+            %div.description= resource.description
           
     

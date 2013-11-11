@@ -16,12 +16,18 @@ module NavigationHelpers
     when /^the Resources page$/
       resources_path
 
-    when /^the edit page for "(.*)"/
+    when /^the new resource page$/
+      new_resource_path
+
+
+    when /^the edit resource page for "(.*)"/
       edit_resource_path(Resource.find_by_title($1))
 
-    when /^the details page for "(.*)"/
-      resource_path(Movie.find_by_title($1))
+    when /^the details resource page for "(.*)"/
+      resource_path(Resource.find_by_title($1))
 
+    when /the nonexistent details resource page/
+      '/resources/-1'
 
 
       # Add more mappings here.

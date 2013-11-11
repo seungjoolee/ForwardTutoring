@@ -1,0 +1,36 @@
+- content_for :stylesheets do
+  = stylesheet_link_tag 'index'
+
+%div.container#subjects-container
+  %div.row
+    %div.col-md-11.col-md-offset-1
+      %ol.breadcrumb
+        %li.active Subjects
+      %div.subject
+        %div.subject-title Math
+        %div.field-block
+          %div.field
+            %a.btn.btn-default.btn-lg{:href=>"/fields/1"} Algebra
+          %div.field
+            %a.btn.btn-default.btn-lg{:href=>"/fields/1"} Calculus
+          %div.field
+            %a.btn.btn-default.btn-lg{:href=>"/fields/1"} Algebra
+          %div.field
+            %a.btn.btn-default.btn-lg{:href=>"/fields/1"} Algebra
+          %div.field
+            %a.btn.btn-default.btn-lg{:href=>"/fields/1"} Algebra
+          %div.field
+            %a.btn.btn-default.btn-lg{:href=>"/fields/1"} Algebra
+      %div.subject
+        %div.subject-title Science
+        %div.field-block
+          %div.field
+            %a.btn.btn-default.btn-lg{:href=>"/fields/1"} Chemistry
+          %div.field
+            %a.btn.btn-default.btn-lg{:href=>"/fields/1"} Physics
+          %div.field
+            %a.btn.btn-default.btn-lg{:href=>"/fields/1"} Biology
+          %div.field
+            %a.btn.btn-default.btn-lg{:href=>"/fields/1"} Algebra
+          %div.field
+            %a.btn.btn-default.btn-lg{:href=>"/fields/1"} Algebra
