@@ -3,19 +3,37 @@
 
 %div.container#fields-container
   %div.row
-    %div.col-md-11.col-md-offset-1
+    %div.col-md-10.col-md-offset-1
       %ol.breadcrumb
         %li 
-          %a{:href=>"#"} Math
-        %li.active Algebra
-      %div#field-wrapper
-        %div#field-title
-          Algebra
+          %a{:href=>subjects_path} 
+            =@field.subject.title
+        %li.active 
+          =@field.title
+      %div.content-wrapper
+        %div#field-header
+          %div.title
+            =@field.title
+          %div.pull-right
+            %div.cell
+              %input.form-control{:placeholder => "Search Keywords..."}
+            %div.cell
+              %button.btn.btn-primary{:type => "submit"}
+                %span.glyphicon.glyphicon-search
         %div#topics-block
-          %div.topic
-            %a{:href=>"/topics/1"} Factoring
-          %div.topic
-            %a{:href=>"/topics/1"} Factoring
-          %div.topic
-            %a{:href=>"/topics/1"} Factoring
-        
+          - @field.topics.each do |topic|
+            %div.panel.panel-default
+              %div.panel-heading
+                %h3.panel-title 
+                  %a{:href=> topic_path(topic)}
+                    = topic.title
+              %div.panel-body
+                - topic.resources.each do |resource|
+                  - if resource != topic.resources[-1]
+                    =resource.title + ","
+                  - else
+                    =resource.title
+                - if topic.resources.empty?
+                  %span.no-resources No resources available.
+
+          

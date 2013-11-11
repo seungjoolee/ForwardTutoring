@@ -1,14 +1,16 @@
 - content_for :stylesheets do
   = stylesheet_link_tag 'new'
 
-- if flash[:notice]
-  #notice.message= flash[:notice]
-
 %div#form-container.container
   %div.row
-    %div#form-div.col-md-10.col-md-offset-1
+    %div.content-wrapper.col-md-10.col-md-offset-1
       %div.container-header
         Create Resource
+
+      - if flash[:notice]
+        %div.alert.alert-danger
+          - flash[:notice].each do |msg|
+            =msg + "."
 
       = form_tag resources_path do
         %div.form-group
@@ -20,11 +22,6 @@
           = text_field( :resource, 'posted_by', :class => "form-control", :placeholder => "John Smith", :value => "#{@resource_hash[:posted_by]}")
         
         %div.form-group
-          = label :resource, :category, 'Category', :class => "control-label"
-          = select :resource, 'category', [['Math', 'math'], ['Science', 'science']], {:class => "form-control"}
-
-
-        %div.form-group
           = label :resource, :description, 'Description', :class => "control-label"
           = text_area :resource, 'description', :class => "form-control", :rows => "3", :placeholder => "A short descrition of your resource", :value => @resource_hash[:description]
 
@@ -34,4 +31,4 @@
         
         = submit_tag 'Submit', :class => "btn btn-primary"
 
-        = link_to 'Back to Resources', resources_path
+

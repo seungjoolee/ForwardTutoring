@@ -1,14 +1,12 @@
 #topic-container {
   margin-top: 25px;
-  #topic-wrapper {
-    background-color: white;
-    border: 1px solid #e6e6e6;
-    padding: 20px 30px;
+  .content-wrapper {
     #topic-title{
       font-size: 35px;
       margin-bottom: 10px;
       font-family: 'Open Sans';
-      font-weight: 300;
+      font-weight: 400;
+      color: #2e69a1;
     }
     #topics-description {
       

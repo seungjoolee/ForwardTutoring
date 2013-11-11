@@ -1,7 +1,7 @@
 class FieldsController < ApplicationController
   
   def show
-    #@topics = Topic.find(params[:id])
+    @field = Field.find(params[:id])
   end
 
 end

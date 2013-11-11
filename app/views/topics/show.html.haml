@@ -3,41 +3,50 @@
 
 %div.container#topic-container
   %div.row
-    %div.col-md-11.col-md-offset-1
+    %div.col-md-10.col-md-offset-1
       %ol.breadcrumb
         %li 
-          %a{:href=>"#"} Math
+          %a{:href=>subjects_path()}
+            =@topic.field.subject.title
         %li 
-          %a{:href=>"#"} Algebra
-        %li.active Factoring
-      %div#topic-wrapper
+          %a{:href=>field_path(@topic.field)}
+            =@topic.field.title
+        %li.active 
+          =@topic.title
+      %div.content-wrapper
         %div#topic-title
-          Factoring
+          =@topic.title
         %div#topics-description
-          This is factoring and it is great. Seung should do all the work.
-          This is factoring and it is great. Seung should do all the work.
-          This is factoring and it is great. Seung should do all the work.
-          This is factoring and it is great. Seung should do all the work.
-          v
-          This is factoring and it is great. Seung should do all the work.
-          This is factoring and it is great. Seung should do all the work.
-          This is factoring and it is great. Seung should do all the work.
-          This is factoring and it is great. Seung should do all the work.
-          This is factoring and it is great. Seung should do all the work.
-          This is factoring and it is great. Seung should do all the work.
-          v
-          This is factoring and it is great. Seung should do all the work.
-          This is factoring and it is great. Seung should do all the work.
+          This is factoring and it is great. 
+          This is factoring and it is great. 
+          This is factoring and it is great. 
+          This is factoring and it is great. 
+          This is factoring and it is great. 
+          This is factoring and it is great. 
+          This is factoring and it is great. 
+          This is factoring and it is great. 
+          This is factoring and it is great. 
+          This is factoring and it is great. 
+          This is factoring and it is great. 
+          This is factoring and it is great.
+          This is factoring and it is great. 
+          This is factoring and it is great. 
+          This is factoring and it is great. 
+          This is factoring and it is great. 
+          This is factoring and it is great. 
+          This is factoring and it is great. 
+          This is factoring and it is great. 
+          This is factoring and it is great. 
+          This is factoring and it is great. 
+          This is factoring and it is great. 
+          This is factoring and it is great. 
+          This is factoring and it is great.
         %div#resources-container.well
           %div#resources-title
             Resources
           %div#resources-block
-            %div.resource
-              %div.title 
-                %a{:href=>"#"} Factoring and FOIL
-            %div.resource
-              %div.title 
-                %a{:href=>"#"} Factoring and FOIL
-            %div.resource
-              %div.title 
-                %a{:href=>"#"} Factoring and FOIL
+            - @topic.resources.each do |resource|
+              %div.resource
+                %div.title 
+                  %a{:href=>"#"}
+                    = resource.title

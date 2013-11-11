@@ -13,6 +13,18 @@ module NavigationHelpers
   def path_to(page_name)
     case page_name
 
+    when /^the ForwardTutoring resource page$/
+      resources_path
+
+    when /^the subjects page$/
+      subjects_path
+
+    when /^the "(.*)" topic page$/
+      topic_path(Topic.find_by_title($1))
+
+    when /^the "(.*)" page/
+      resources_path(Resource.find_by_title($1))
+
     when /^the Resources page$/
       resources_path
 
