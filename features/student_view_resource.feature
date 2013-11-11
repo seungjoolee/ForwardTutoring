@@ -7,9 +7,9 @@ Feature: Students can view a single detailed resource
 Background: resources table is populated
 
   Given the following resources exist: 
-  | title    | posted_by | link              | description   | 
-  | Google   | John      | http://google.com | A google site |
-  | Yahoo    | Jack      | http:yahoo.com    | A yahoo site  |
+  | title    | posted_by | link              | description   | category |
+  | Google   | John      | http://google.com | A google site | math     |
+  | Yahoo    | Jack      | http:yahoo.com    | A yahoo site  | math     |
 
 Scenario: View resource
 When I am on the Resources page
@@ -21,6 +21,6 @@ And I should see "A google site"
 And I should see "http://google.com"
   
 Scenario: Try to view a resource that does not exist
-When I am on the nonexistent details resource page
-Then I should be on the Resources page
-And I should see "This resource does not exist"
+  When I am on the nonexistent details resource page
+  Then I should be on the Resources page
+  And I should see "This resource does not exist"

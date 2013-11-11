@@ -15,7 +15,10 @@ end
 
  # end
 
-
+When /^I follow the "(.*)" link/ do |link|
+  #resource
+  click_link(link)
+  end
 
 Then /^I should (not )?see the "(.*)" resource$/ do |unseen, resource|  if unseen
     if page.respond_to? :should
@@ -93,3 +96,4 @@ end
 Then /I should see in "(.*)", "(.*)"/ do |field, val|
   find_field(field).value.should == val
 end
+
