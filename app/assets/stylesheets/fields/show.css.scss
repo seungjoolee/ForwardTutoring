@@ -19,10 +19,18 @@
   }
   #topics-block {
     margin-top: 20px;
-    .panel-title a {
-      color: #428BCA;
-      &:hover{
-        color: #005580;
+    .panel{
+      margin-bottom: 10px;
+      .panel-title a {
+        color: #428BCA;
+        &:hover{
+          color: #005580;
+        }
+      }
+      .panel-body {
+        .no-resources {
+          font-style: italic;
+        }
       }
     }
   }
