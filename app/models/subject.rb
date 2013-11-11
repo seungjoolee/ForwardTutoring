@@ -3,4 +3,5 @@ class Subject < ActiveRecord::Base
 
   has_many :fields
   has_many :topics, :through => :fields, :source => :topics
+  has_many :resources, :through => :topics, :source => :resources
 end

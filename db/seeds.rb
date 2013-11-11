@@ -9,6 +9,7 @@
 math  = Subject.create(:title => "Math")
   geometry = math.fields.create(:title => "Geometry")
     proofs = geometry.topics.create(:title => "Proofs")
+      proof_worksheet = proofs.resources.create(:title => "Exciting Proofs Worksheet", :posted_by => "Calvin Woo", :description => "Includes various proofs regarding non-Eurclidian space", :link => "www.facebook.com")
     lines = geometry.topics.create(:title => "Parallel and Perpendicular Lines")
     triangles = geometry.topics.create(:title => "Triangles")
     quadrilaterals = geometry.topics.create(:title => "Quadrilaterals")
