@@ -27,7 +27,7 @@ class ResourcesController < ApplicationController
    else
       #redirect_to resource_path(@resource.id)
       @resource.save!
-      redirect_to resources_path
+      redirect_to resource_path(@resource)
     end
   end
 
