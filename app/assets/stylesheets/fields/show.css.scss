@@ -1,19 +1,28 @@
 #fields-container {
   margin-top: 25px;
-  #field-wrapper {
-    background-color: white;
-    border: 1px solid #e6e6e6;
-    padding: 20px 30px;
-    #field-title {
-      font-size: 30px;
-      font-family: 'Open Sans';
-      font-weight: 300;
-    }
-    #topics-block {
-      padding-left: 25px;
-      .topic {
-        font-size: 20px;
-        font-weight: 300;
+  .content-wrapper {
+    #field-header {
+      .title {
+        font-size: 30px;
+        font-family: 'Open Sans', sans-serif;
+        font-weight: 400;
+        color: #2e69a1;
+        display: inline-block;
+      }
+      .pull-right {
+        .cell {
+          display: inline-block;
+          vertical-align: middle;
+        }
+      }
+    } 
+  }
+  #topics-block {
+    margin-top: 20px;
+    .panel-title a {
+      color: #428BCA;
+      &:hover{
+        color: #005580;
       }
     }
   }
