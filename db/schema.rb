@@ -11,7 +11,14 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20131109193122) do
+ActiveRecord::Schema.define(:version => 20131111030532) do
+
+  create_table "fields", :force => true do |t|
+    t.string   "title"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+    t.integer  "subject_id"
+  end
 
   create_table "resources", :force => true do |t|
     t.string   "title"
@@ -23,16 +30,17 @@ ActiveRecord::Schema.define(:version => 20131109193122) do
     t.datetime "updated_at",  :null => false
   end
 
-  create_table "reviews", :force => true do |t|
-    t.integer  "resource_id"
-    t.string   "user"
-    t.text     "content"
-    t.integer  "rating"
-    t.boolean  "anonymous"
-    t.datetime "created_at",  :null => false
-    t.datetime "updated_at",  :null => false
+  create_table "subjects", :force => true do |t|
+    t.string   "title"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
   end
 
-  add_index "reviews", ["resource_id"], :name => "index_reviews_on_resource_id"
+  create_table "topics", :force => true do |t|
+    t.string   "title"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+    t.integer  "field_id"
+  end
 
 end
