@@ -48,5 +48,5 @@
             - @topic.resources.each do |resource|
               %div.resource
                 %div.title 
-                  %a{:href=>"#"}
+                  %a{:href=>resource_path(resource)}
                     = resource.title
