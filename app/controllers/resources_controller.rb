@@ -26,8 +26,7 @@ class ResourcesController < ApplicationController
         redirect_to new_resource_path(params[:resource]) and return
    else
       @resource.save!
-      redirect_to resources_path
-      #redirect_to resource_path(@resource)
+      redirect_to resource_path(@resource)
     end
   end
 
