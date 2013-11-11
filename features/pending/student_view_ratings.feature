@@ -6,11 +6,11 @@ Feature: student viewing comments for a resource
 Background: comments have been added to database
 
   Given the following resources exist:
-  | title                            | category | rating | release_date |
-  | Basic Algebra                    | Math     | 4      | 10-Jun-2013  |
-  | English and the Language         | English  | 2      | 11-Jul-2013  |
-  | World Geography for 7th Grade    | Null     | 3      | 12-Oct-2013  |
-  | Quantum Computing                | Null     | 5      | 13-Nov-2013  |
+  | title                            | link |
+  | Basic Algebra                    | ww |
+  | English and the Language         | ww |
+  | World Geography for 7th Grade    | ww |
+  | Quantum Computing                | ww |
 
   Given the following ratings exist:
   | title                            | comments                                      |

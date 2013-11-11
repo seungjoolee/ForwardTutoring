@@ -7,11 +7,11 @@ Feature: Posting Comments for materials
 Background: resources have been added to database
 
   Given the following resources exist:
-  | title                            | category | link |
-  | Basic Algebra                    | Math     | ww   |
-  | English and the Language         | English  | ww   |
-  | World Geography for 7th Grade    | Null     | ww   |
-  | Quantum Computing                | Null     | ww   |
+  | title                            |  link |
+  | Basic Algebra                    |  ww   |
+  | English and the Language         |  ww   |
+  | World Geography for 7th Grade    | ww   |
+  | Quantum Computing                |  ww   |
 
   And I am on the ForwardTutoring resource page
 

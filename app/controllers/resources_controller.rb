@@ -1,11 +1,11 @@
 class ResourcesController < ApplicationController
   def index
-    if params[:category].nil?
+    #if params[:category].nil?
       @resources = Resource.all
-    else
-      category = params[:category]
-      @resources = Resource.where("category == #{category}")
-    end
+    #else
+    #  category = params[:category]
+    #  @resources = Resource.where("category == #{category}")
+    #end
   end
 
   def new
@@ -15,7 +15,7 @@ class ResourcesController < ApplicationController
     @resource_hash[:description] = params[:description]
     @resource_hash[:posted_by] = params[:posted_by]
     @resource_hash[:link] = params[:link]
-    @resource_hash[:category] = params[:category]
+    # @resource_hash[:category] = params[:category]
 
   end
 
