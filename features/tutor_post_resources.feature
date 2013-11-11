@@ -34,8 +34,9 @@ Scenario:Successfully Post Link into Resources Page
   And I fill in "resource_description" with "a link to Google"
   And I fill in "resource_link" with "http://www.google.com"
   And I press "Submit"
-  Then I should be on the Resources page
-  And I should see the "Google" resource
+  Then I should be on the details resource page for "Google"
+  #  Then I should be on the Resources page
+  #And I should see the "Google" resource
 
 #Scenario: Successfully Post File into Resources Page
 #  When I fill in "resource_title" with "Math File"

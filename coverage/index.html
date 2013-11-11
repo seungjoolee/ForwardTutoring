@@ -21,7 +21,7 @@
       <img src="./assets/0.4.5/loading.gif" alt="loading"/>
     </div>
     <div id="wrapper" style="display:none;">
-      <div class="timestamp">Generated <abbr class="timeago" title="2013-11-11T02:25:19-08:00">2013-11-11T02:25:19-08:00</abbr></div>
+      <div class="timestamp">Generated <abbr class="timeago" title="2013-11-11T02:33:03-08:00">2013-11-11T02:33:03-08:00</abbr></div>
       <ul class="group_tabs"></ul>
 
       <div id="content">
@@ -71,7 +71,7 @@
       <tr>
         <td><a href="#1e9c690ba2a9fce034f6c00f088fe2d4844a7e92" class="src_link" title="./app/controllers/resources_controller.rb">./app/controllers/resources_controller.rb</a></td>
         <td class="green">95.83 %</td>
-        <td>48</td>
+        <td>47</td>
         <td>24</td>
         <td>23</td>
         <td>1</td>
@@ -227,7 +227,7 @@
       <tr>
         <td><a href="#1e9c690ba2a9fce034f6c00f088fe2d4844a7e92" class="src_link" title="./app/controllers/resources_controller.rb">./app/controllers/resources_controller.rb</a></td>
         <td class="green">95.83 %</td>
-        <td>48</td>
+        <td>47</td>
         <td>24</td>
         <td>23</td>
         <td>1</td>
@@ -691,7 +691,7 @@
     </tr>
   
     
-    <tr class="hit" data-hits="7">
+    <tr class="hit" data-hits="6">
       <td class="line_number">
         <pre>4</pre>
       </td>
@@ -699,7 +699,7 @@
         <pre>      @resources = Resource.all</pre>
       </td>
       <td class="hits">
-        7
+        6
       </td>
     </tr>
   
@@ -1021,7 +1021,7 @@
         <pre>29</pre>
       </td>
       <td>
-        <pre>      redirect_to resources_path</pre>
+        <pre>      redirect_to resource_path(@resource)</pre>
       </td>
       <td class="hits">
         4
@@ -1034,7 +1034,7 @@
         <pre>30</pre>
       </td>
       <td>
-        <pre>      #redirect_to resource_path(@resource)</pre>
+        <pre>    end</pre>
       </td>
       <td class="hits">
         
@@ -1047,7 +1047,7 @@
         <pre>31</pre>
       </td>
       <td>
-        <pre>    end</pre>
+        <pre>  end</pre>
       </td>
       <td class="hits">
         
@@ -1060,19 +1060,6 @@
         <pre>32</pre>
       </td>
       <td>
-        <pre>  end</pre>
-      </td>
-      <td class="hits">
-        
-      </td>
-    </tr>
-  
-    
-    <tr class="never" >
-      <td class="line_number">
-        <pre>33</pre>
-      </td>
-      <td>
         <pre></pre>
       </td>
       <td class="hits">
@@ -1083,7 +1070,7 @@
     
     <tr class="hit" data-hits="2">
       <td class="line_number">
-        <pre>34</pre>
+        <pre>33</pre>
       </td>
       <td>
         <pre>  def show</pre>
@@ -1094,35 +1081,35 @@
     </tr>
   
     
-    <tr class="hit" data-hits="2">
+    <tr class="hit" data-hits="3">
       <td class="line_number">
-        <pre>35</pre>
+        <pre>34</pre>
       </td>
       <td>
         <pre>    begin</pre>
       </td>
       <td class="hits">
-        2
+        3
       </td>
     </tr>
   
     
-    <tr class="hit" data-hits="2">
+    <tr class="hit" data-hits="3">
       <td class="line_number">
-        <pre>36</pre>
+        <pre>35</pre>
       </td>
       <td>
         <pre>    @resource = Resource.find(params[:id])</pre>
       </td>
       <td class="hits">
-        2
+        3
       </td>
     </tr>
   
     
     <tr class="never" >
       <td class="line_number">
-        <pre>37</pre>
+        <pre>36</pre>
       </td>
       <td>
         <pre>    rescue</pre>
@@ -1135,7 +1122,7 @@
     
     <tr class="hit" data-hits="1">
       <td class="line_number">
-        <pre>38</pre>
+        <pre>37</pre>
       </td>
       <td>
         <pre>      flash[:notice] = &quot;This resource does not exist&quot;</pre>
@@ -1148,7 +1135,7 @@
     
     <tr class="hit" data-hits="1">
       <td class="line_number">
-        <pre>39</pre>
+        <pre>38</pre>
       </td>
       <td>
         <pre>      redirect_to resources_path</pre>
@@ -1161,7 +1148,7 @@
     
     <tr class="never" >
       <td class="line_number">
-        <pre>40</pre>
+        <pre>39</pre>
       </td>
       <td>
         <pre>    end</pre>
@@ -1174,7 +1161,7 @@
     
     <tr class="never" >
       <td class="line_number">
-        <pre>41</pre>
+        <pre>40</pre>
       </td>
       <td>
         <pre>  end</pre>
@@ -1187,7 +1174,7 @@
     
     <tr class="never" >
       <td class="line_number">
-        <pre>42</pre>
+        <pre>41</pre>
       </td>
       <td>
         <pre></pre>
@@ -1200,7 +1187,7 @@
     
     <tr class="hit" data-hits="2">
       <td class="line_number">
-        <pre>43</pre>
+        <pre>42</pre>
       </td>
       <td>
         <pre>  private</pre>
@@ -1213,7 +1200,7 @@
     
     <tr class="hit" data-hits="2">
       <td class="line_number">
-        <pre>44</pre>
+        <pre>43</pre>
       </td>
       <td>
         <pre>    def resource_params</pre>
@@ -1226,7 +1213,7 @@
     
     <tr class="miss" data-hits="0">
       <td class="line_number">
-        <pre>45</pre>
+        <pre>44</pre>
       </td>
       <td>
         <pre>      params.require(:resource).permit(:title, :description, :downloads)</pre>
@@ -1239,7 +1226,7 @@
     
     <tr class="never" >
       <td class="line_number">
-        <pre>46</pre>
+        <pre>45</pre>
       </td>
       <td>
         <pre>    end</pre>
@@ -1252,7 +1239,7 @@
     
     <tr class="never" >
       <td class="line_number">
-        <pre>47</pre>
+        <pre>46</pre>
       </td>
       <td>
         <pre></pre>
@@ -1265,7 +1252,7 @@
     
     <tr class="never" >
       <td class="line_number">
-        <pre>48</pre>
+        <pre>47</pre>
       </td>
       <td>
         <pre>end</pre>
