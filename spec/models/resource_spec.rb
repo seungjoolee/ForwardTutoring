@@ -21,7 +21,7 @@ describe Resource do
       resource.should_not be_valid
   end
 
-    it "should error with a blank title" do
+    it "should error with an empty title" do
       empty_title = Hash[@resource_hash]
       empty_title[:title] = ""
       resource = Resource.new(empty_title)
@@ -45,18 +45,15 @@ it "should error without a topic id" do
     it "should pick only 1 of the link or the file"
   end
 
-  describe "belonging to a topic" do
+  describe "Associations" do
     it "should belong to a topic" do
-            resource = Resource.reflect_on_association(:topic)
-            resource.macro.should == :belongs_to
+      resource = Resource.reflect_on_association(:topic)
+      resource.macro.should == :belongs_to
     end
-  end
 
-
-  describe "having many reviews" do
     it "should have many reviews" do
-            resource = Resource.reflect_on_association(:reviews)
-            resource.macro.should == :has_many
+      resource = Resource.reflect_on_association(:reviews)
+      resource.macro.should == :has_many
     end
   end
 end

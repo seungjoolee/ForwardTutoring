@@ -1,6 +1,5 @@
 require 'spec_helper'
 describe ResourcesController do
-  #describe
 
   describe "Create a resource", :pending => true do
     before do
