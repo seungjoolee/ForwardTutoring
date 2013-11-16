@@ -1,11 +1,11 @@
 class ResourcesController < ApplicationController
   def index
-    #if params[:category].nil?
+    if params[:topic].nil?
       @resources = Resource.all
-    #else
-    #  category = params[:category]
-    #  @resources = Resource.where("category == #{category}")
-    #end
+    else
+      topic = params[:topic]
+      @resources = Resource.where("category == ?", topic)
+    end
   end
 
   def new
@@ -20,6 +20,7 @@ class ResourcesController < ApplicationController
   end
 
   def create
+    @topic = Topic.find(params[:topic_id])
     @resource = Resource.new(params[:resource])
     if !@resource.valid?
         flash[:notice] = @resource.errors.full_messages
