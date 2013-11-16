@@ -3,8 +3,23 @@ Feature: Posting Study Materials
   So that students can see content and learn while I am offline
   I want to post links and files into a resources page
 
-Background: on the new resource page
-  Given I am on the new resource page
+Background: on the new resource page with topics populated 
+
+  Given the following subjects exist: 
+  | title    | 
+  | Math     |
+
+ And the following fields exist: 
+  | title    | subject |
+  | Math     | Math |
+
+  And the following topics exist: 
+  | title    | field   |
+  | Proofs   | Math    |
+  | Angles   | Math    |
+
+  And I am on the new resource page
+
   
 Scenario: No title in new resources
   When I fill in "resource_posted_by" with "Jack" 
@@ -34,9 +49,8 @@ Scenario:Successfully Post Link into Resources Page
   And I fill in "resource_description" with "a link to Google"
   And I fill in "resource_link" with "http://www.google.com"
   And I press "Submit"
-  Then I should be on the details resource page for "Google"
-  #  Then I should be on the Resources page
-  #And I should see the "Google" resource
+  Then I should be on the topic page of "Google"
+  And I should see the "Google" resource
 
 #Scenario: Successfully Post File into Resources Page
 #  When I fill in "resource_title" with "Math File"
@@ -56,6 +70,3 @@ Scenario:Successfully Post Link into Resources Page
 #  And I upload the file "virus.exe"
 #  And I press "Submit"
 #  Then I should see "Error: Invalid uploaded File"
-
-
-  

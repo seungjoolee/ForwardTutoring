@@ -31,12 +31,15 @@ module NavigationHelpers
     when /^the new resource page$/
       new_resource_path
 
+    when /^the topic page of "(.*)"$/
+      topic_path(Topic.find(Resource.find_by_title($1).topic_id))
 
     when /^the edit resource page for "(.*)"/
       edit_resource_path(Resource.find_by_title($1))
 
     when /^the details resource page for "(.*)"/
       resource_path(Resource.find_by_title($1))
+
 
     when /the nonexistent details resource page/
       '/resources/-1'

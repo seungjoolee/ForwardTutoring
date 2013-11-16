@@ -5,12 +5,18 @@ Feature: student sorting for resources
 
 Background: resources have been added to database
 
-  Given the following resources exist:
-  | title                            | link |
-  | Basic Algebra                    | ww |
-  | English and the Language         | ww |
-  | World Geography for 7th Grade    | ww |
-  | Quantum Computing                | ww |
+  Given the following topics exist: 
+  | title    |
+  | Proofs   |
+  | Angles   |
+
+  And the following resources exist:
+  | title                         | posted_by | link | description   | topic  |
+  | title                         |  jack     | ww   | jack          | Proofs |
+  | Basic Algebra                 |  jack     | ww   | jack          | Proofs |
+  | English and the Language      |  jack     | ww   | jack          | Proofs |
+  | World Geography for 7th Grade |  jack     | ww   | jack          | Proofs |
+  | Quantum Computing             |  jack     | ww   | jack          | Proofs |
 
   And I am on the ForwardTutoring resource page
 

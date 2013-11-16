@@ -6,10 +6,18 @@ Feature: Students can view a single detailed resource
 
 Background: resources table is populated
 
-  Given the following resources exist: 
-  | title    | posted_by | link              | description   |
-  | Google   | John      | http://google.com | A google site |
-  | Yahoo    | Jack      | http:yahoo.com    | A yahoo site  |
+
+
+  Given the following topics exist: 
+  | title    |
+  | Proofs   |
+  | Angles   |
+
+
+  And the following resources exist: 
+  | title    | posted_by | link              | description   | topic  |
+  | Google   | John      | http://google.com | A google site | Proofs |
+  | Yahoo    | Jack      | http:yahoo.com    | A yahoo site  | Proofs |
 
 Scenario: View resource
 When I am on the Resources page
