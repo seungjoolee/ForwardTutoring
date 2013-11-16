@@ -179,6 +179,173 @@ Cucumber Features:
     - 1
     - 
     - 1
+    - 0
+    - 
+    - 
+    /home/saasbook/Desktop/ForwardTutoring/app/helpers/reviews_helper.rb:
+    - 1
+    - 
+    /home/saasbook/Desktop/ForwardTutoring/app/controllers/fields_controller.rb:
+    - 1
+    - 
+    - 1
+    - 0
+    - 
+    - 
+    - 
+    /home/saasbook/Desktop/ForwardTutoring/app/models/field.rb:
+    - 1
+    - 1
+    - 1
+    - 
+    - 1
+    - 1
+    - 1
+    - 
+    /home/saasbook/Desktop/ForwardTutoring/app/controllers/resources_controller.rb:
+    - 1
+    - 1
+    - 0
+    - 0
+    - 
+    - 0
+    - 0
+    - 
+    - 
+    - 
+    - 1
+    - 
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 
+    - 
+    - 
+    - 
+    - 1
+    - 0
+    - 
+    - 0
+    - 0
+    - 0
+    - 0
+    - 
+    - 0
+    - 
+    - 
+    - 0
+    - 
+    - 
+    - 
+    - 1
+    - 0
+    - 0
+    - 
+    - 0
+    - 0
+    - 
+    - 
+    - 
+    - 1
+    - 1
+    - 0
+    - 
+    - 
+    - 
+    /home/saasbook/Desktop/ForwardTutoring/app/models/resource.rb:
+    - 1
+    - 1
+    - 1
+    - 1
+    - 1
+    - 
+    - 
+    - 
+    /home/saasbook/Desktop/ForwardTutoring/app/controllers/reviews_controller.rb:
+    - 1
+    - 1
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 
+    - 
+    - 
+    - 0
+    - 0
+    - 
+    - 
+    - 
+    - 
+    /home/saasbook/Desktop/ForwardTutoring/app/models/review.rb:
+    - 1
+    - 1
+    - 1
+    - 1
+    - 
+    /home/saasbook/Desktop/ForwardTutoring/app/controllers/subjects_controller.rb:
+    - 1
+    - 1
+    - 0
+    - 
+    - 
+    - 1
+    - 
+    - 
+    - 
+    - 1
+    - 
+    - 
+    - 0
+    - 
+    - 
+    - 1
+    - 
+    - 
+    - 
+    - 
+    /home/saasbook/Desktop/ForwardTutoring/app/models/subject.rb:
+    - 1
+    - 1
+    - 1
+    - 
+    - 1
+    - 1
+    - 1
+    - 
+    /home/saasbook/Desktop/ForwardTutoring/app/controllers/topics_controller.rb:
+    - 1
+    - 
+    - 1
+    - 0
+    - 
+    - 
+    - 
+    /home/saasbook/Desktop/ForwardTutoring/app/models/topic.rb:
+    - 1
+    - 1
+    - 1
+    - 
+    - 1
+    - 1
+    - 
+  :created_at: 2013-11-16 15:21:21.764539137 -08:00
+RSpec:
+  :original_result:
+    /home/saasbook/Desktop/ForwardTutoring/app/controllers/application_controller.rb:
+    - 1
+    - 1
+    - 
+    /home/saasbook/Desktop/ForwardTutoring/app/helpers/application_helper.rb:
+    - 1
+    - 
+    /home/saasbook/Desktop/ForwardTutoring/app/helpers/resources_helper.rb:
+    - 1
+    - 
+    - 1
     - 1
     - 
     - 
@@ -332,4 +499,4 @@ Cucumber Features:
     - 1
     - 1
     - 
-  :created_at: 2013-11-16 14:41:57.552789144 -08:00
+  :created_at: 2013-11-16 15:28:12.260839676 -08:00
