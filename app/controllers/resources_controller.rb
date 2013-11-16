@@ -21,14 +21,15 @@ class ResourcesController < ApplicationController
 
   def create
     @topic = Topic.find(params[:resource][:topic_id])
-    @resource = Resource.new(params[:resource])
+     @resource = Resource.new(params[:resource])
+    # @resource = @topic.resources.new(params[:resource])
     if !@resource.valid?
         flash[:notice] = @resource.errors.full_messages
         redirect_to new_resource_path(params[:resource]) and return
    else
       @resource.save!
-      @topic.resources << @resource
-      #redirect_to resource_path(@resource)
+       @topic.resources << @resource
+      # redirect_to resource_path(@resource)
       redirect_to topic_path(@topic.id)
     end
   end

@@ -4,14 +4,16 @@ describe ResourcesController do
 
   describe "Create a resource" do
     before do
-      @mock_resource = double('resource', :errors => nil, :valid? => true, :save! => nil, :title => "Algebra", :link => "algebra.com", :category => "math")
-      @error_resource = double('resource', :errors => nil, :valid? => true, :save! => nil, :title => "Algebra", :link => "algebra.com", :category => "math")
+      @mock_topic = double('topic', :resources => [])
+      @mock_resource = double('resource', :errors => nil, :valid? => true, :save! => nil, :title => "Algebra", :link => "algebra.com", :topic => "math")
+      @error_resource = double('resource', :errors => nil, :valid? => true, :save! => nil, :title => "Algebra", :link => "algebra.com", :topic => "math")
       @error_resource.stub(:errors => double('error', :full_messages => "error"), :valid? => false)
-      @resource_array = {:title => "Algebra", :link => "algebra.com", :category => "math"}
+      @resource_array = {:title => "Algebra", :link => "algebra.com", :topic_id => "1"}
     end
 
     context "happy path posting a link" do
       it "should send a new method to the Resource model" do
+        Topic.stub(:find).and_return(@mock_topic)
         Resource.should_receive(:new).and_return(@mock_resource)
         post :create, @resource_array
       end
