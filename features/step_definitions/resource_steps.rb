@@ -6,33 +6,32 @@ end
 
 Given /the following fields exist/ do |fields_table|
   fields_table.hashes.each do |field|
-    field[:subject_id] = Subject.find_by_title(field[:subject]).id
-    field.delete('subject')
-    Field.create!(field)
+    if not field[:subject].nil?
+      field[:subject_id] = Subject.find_by_title(field[:subject]).id
+      field.delete('subject')
+      end
+      Field.create!(field)
+
   end
 end
 
 Given /the following topics exist/ do |topics_table|
   topics_table.hashes.each do |topic|
+    if not topic[:field].nil?
     topic[:field_id] = Field.find_by_title(topic[:field]).id
     topic.delete('field')
+      end
     Topic.create!(topic)
   end
 end
 
 Given /the following resources exist/ do |resources_table|
   resources_table.hashes.each do |resource|
-    resource[:field_id] = Field.find_by_title(resource[:field]).id
-    resource.delete('field')
+    resource[:topic_id] = Topic.find_by_title(resource[:topic]).id
+    resource.delete('topic')
     Resource.create!(resource)
   end
 end
-
-#Given /the following comments exist/ do |comments_table|
-#  comments_table.hashes.each do |comment|
-#    Comment.create!(comment)
-#  end
-#end
 
 # When /I upload a file "(.*)"/ do |file|
 
