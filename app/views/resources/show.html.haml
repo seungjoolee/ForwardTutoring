@@ -1,4 +1,9 @@
+
+- if flash[:notice]
+  #notice.message= flash[:notice]
+
 %h2 Title: #{@resource.title}
+
 
 %h3 Topic: 
 %p#topic= getTopicTitle(@resource.topic_id)
@@ -22,32 +27,32 @@
 
 %h3 Add a review:
 = form_for([@resource, @resource.reviews.build]) do |f|
-	%p
-		= f.label :user
-		%br
-		= f.text_field :user
-	%p
-		= f.label :rating
-		%br
-		= f.radio_button :rating, 1
-		= f.label :rating, 1
-		= f.radio_button :rating, 2
-		= f.label :rating, 2
-		= f.radio_button :rating, 3
-		= f.label :rating, 3
-		= f.radio_button :rating, 4
-		= f.label :rating, 4
-		= f.radio_button :rating, 5
-		= f.label :rating, 5
-	%p
-		= f.label :content
-		%br
-		= f.text_area :content
-	%p
-		= f.label :anonymous
-		%br
-		= f.check_box :anonymous
-	%p.button
-		= f.submit
+  %p
+    = f.label :user
+    %br
+    = f.text_field :user
+  %p
+    = f.label :rating
+    %br
+    = f.radio_button :rating, 1
+    = f.label :rating, 1
+    = f.radio_button :rating, 2
+    = f.label :rating, 2
+    = f.radio_button :rating, 3
+    = f.label :rating, 3
+    = f.radio_button :rating, 4
+    = f.label :rating, 4
+    = f.radio_button :rating, 5
+    = f.label :rating, 5
+  %p
+    = f.label :content
+  %br
+    = f.text_area :content
+  %p
+    = f.label :anonymous
+  %br
+    = f.check_box :anonymous
+  %p.button
+    = f.submit
 
 
