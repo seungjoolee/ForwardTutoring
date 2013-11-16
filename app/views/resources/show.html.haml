@@ -1,5 +1,8 @@
 %h2 Title: #{@resource.title}
 
+%h3 Topic: 
+%p#topic= getTopicTitle(@resource.topic_id)
+
 %h3 Description:
 %p#description= @resource.description
 
