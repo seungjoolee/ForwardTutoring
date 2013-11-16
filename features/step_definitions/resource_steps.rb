@@ -33,6 +33,16 @@ Given /the following resources exist/ do |resources_table|
   end
 end
 
+Given /the following reviews exist/ do |reviews_table|
+  reviews_table.hashes.each do |review|
+    review[:resource_id] = Resource.find_by_title(review[:resource]).id
+    review.delete('resource')
+    Review.create!(review)
+  end
+end
+
+
+
 # When /I upload a file "(.*)"/ do |file|
 
  # end
@@ -78,6 +88,7 @@ end
 
 Then /I should (not )?see the following reviews: (.*)/ do |unseen, review_list|
   review_list.split(',').collect(&:strip).each do |review|
+    review.gsub!("\"", "")
     if unseen
       if page.respond_to? :should
         page.should have_no_content(review)
