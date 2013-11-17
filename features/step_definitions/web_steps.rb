@@ -43,7 +43,7 @@ When /^(?:|I )follow "([^"]*)"$/ do |link|
   click_link(link)
 end
 
-When /I select "(.+)" from drop-down (.+) menu/ do |item, field|
+When /I select "(.+)" from drop-down (.+) menu/ do |value, field|
   select(value, :from => field)
 end
 
