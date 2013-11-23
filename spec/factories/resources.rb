@@ -6,5 +6,6 @@ FactoryGirl.define do
     posted_by "Ryan"
     description "A guide on how to math"
     topic_id "1"
+    link "www.google.com"
   end
 end

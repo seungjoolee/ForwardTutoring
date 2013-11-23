@@ -7,7 +7,7 @@ Background: on the new resource page with topics populated
 
   Given the following accounts exist: 
   | name     | email 			| password | 
-  | John     | john@hotmail.com | john	   |
+  | John     | john@hotmail.com         | john	   |
 
   And I am on the home page
 

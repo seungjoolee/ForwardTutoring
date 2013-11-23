@@ -19,12 +19,12 @@ Background: comments have been added to database
   | Quantum Computing             |  jack     | ww   | jack          | Proofs |
 
   Given the following reviews exist:
-  | resource                         | content                                       | rating |
-  | Basic Algebra                    | Very helpful!                                 | 1 |
-  | Basic Algebra                    | Is it possible to show more examples?         | 2 |
-  | Basic Algebra                    | Could anyone elaborate more on Q2?            | 3 |
-  | English and the Language         | Thank you so much! You saved me life!         | 4 | 
-  | Quantum Computing                | Hardcore stuff!!                              | 5 |
+  | resource                         | content                                       | rating | user |
+  | Basic Algebra                    | Very helpful!                                 | 1 | jack |
+  | Basic Algebra                    | Is it possible to show more examples?         | 2 | jack |
+  | Basic Algebra                    | Could anyone elaborate more on Q2?            | 3 | jack |
+  | English and the Language         | Thank you so much! You saved me life!         | 4 | jack |
+  | Quantum Computing                | Hardcore stuff!!                              | 5 | jack |
 
   And I am on the ForwardTutoring resource page
 
