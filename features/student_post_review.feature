@@ -26,7 +26,7 @@ Scenario: Post review under basic Algebra
   Given I am on the details resource page for "Basic Algebra"
   When I fill in "review_user" with "Keith"
   And I fill in "review_content" with "Hi" 
-  And I press "Create Review"
+  And I press "Submit"
   Then I should see "Keith"
   Then I should see "Hi"
 
@@ -34,6 +34,6 @@ Scenario: Post review under basic Algebra
 Scenario: Post blank review under basic Algebra
   Given I am on the details resource page for "Basic Algebra"
   When I fill in "review_user" with "Keith"
-  And I press "Create Review"
+  And I press "Submit"
   Then I should see "Content should not be blank"
 
