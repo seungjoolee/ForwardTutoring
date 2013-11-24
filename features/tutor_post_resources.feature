@@ -11,12 +11,12 @@ Background: on the new resource page with topics populated
 
  And the following fields exist: 
   | title    | subject |
-  | Math     | Math |
+  | Geometry | Math    |
 
   And the following topics exist: 
-  | title    | field   |
-  | Proofs   | Math    |
-  | Angles   | Math    |
+  | title    | field    |
+  | Proofs   | Geometry |
+  | Angles   | Geometry |
 
   And I am on the new resource page
 

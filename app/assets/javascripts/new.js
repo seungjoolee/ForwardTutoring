@@ -1,3 +1,3 @@
 $(function(){
-    $("#choose_topic").chosen();
+    $("#resource_topic_id").chosen();
 });
