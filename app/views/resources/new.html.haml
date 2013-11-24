@@ -1,5 +1,8 @@
 - content_for :stylesheets do
   = stylesheet_link_tag 'new'
+  = stylesheet_link_tag 'chosen.min'
+  = javascript_include_tag 'chosen.jquery.min'
+  = javascript_include_tag 'new'
 
 %div#form-container.container
   %div.row
@@ -15,7 +18,9 @@
       = form_tag resources_path do
         %div.form-group
           = label :resource, :topic, 'Topic', :class => "control-label"
-          = select :resource, :topic_id, Topic.all.collect {|t| [t.title, t.id] }
+          %br
+          = select_tag 'choose_topic', grouped_options_for_select(@grouped_options), :include_blank => true , :'data-placeholder' => 'Choose a Topic'
+          =# select :resource, :topic_id, Topic.all.collect {|t| [t.title, t.id] }
 
         %div.form-group
           = label :resource, :title, 'Title', :class => "control-label"

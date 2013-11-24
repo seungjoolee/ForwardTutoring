@@ -15,6 +15,11 @@ class ResourcesController < ApplicationController
     @resource_hash[:description] = params[:description]
     @resource_hash[:posted_by] = params[:posted_by]
     @resource_hash[:link] = params[:link]
+    @topics = Topic.all(:include => :field)
+    @grouped_options = @topics.inject({}) do |options, topic|
+      (options[topic.field.title] ||= []) << [topic.title, topic.id]
+      options
+    end
     # @resource_hash[:category] = params[:category]
 
   end

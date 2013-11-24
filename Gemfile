@@ -38,8 +38,12 @@ group :assets do
   gem 'uglifier', '>= 1.0.3'
 end
 
-gem 'jquery-rails'
+gem 'jquery-rails', '~> 2.3.0'
 gem 'haml'
+
+gem 'activeadmin'
+gem 'jquery-ui-rails'
+gem "meta_search",    '>= 1.1.0.pre'
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
