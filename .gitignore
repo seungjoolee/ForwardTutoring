@@ -21,3 +21,5 @@
 
 #Me thinks it gets auto generated
 schema.rb
+coverage/index.html
+coverage/resultset.yml
