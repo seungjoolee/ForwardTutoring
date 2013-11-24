@@ -46,12 +46,13 @@ Scenario: No link in new resources
   And I should see in "resource_description", "No link to google.com"
 
 Scenario:Successfully Post Link into Resources Page
+  When I select "Proofs" from drop-down resource_topic_id menu
   When I fill in "resource_title" with "Google"
   And I fill in "resource_posted_by" with "Jack"
   And I fill in "resource_description" with "a link to Google"
   And I fill in "resource_link" with "http://www.google.com"
   And I press "Submit"
-  Then I should be on the topic page of "Google"
+  Then I should be on the "Proofs" topic page
   And I should see the "Google" resource
 
 Scenario:Successfully Post Link into Resources Page and should be on the same topic page
