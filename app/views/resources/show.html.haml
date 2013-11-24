@@ -1,58 +1,68 @@
+- content_for :stylesheets do
+  = stylesheet_link_tag 'resources/show'
 
-- if flash[:notice]
-  #notice.message= flash[:notice]
+%div.container
+  %div.row
+    %div.col-md-10.col-md-offset-1
+      %div.content-wrapper
+        %div.title #{@resource.title}
 
-%h2 Title: #{@resource.title}
+        %span.topic_in In: 
+        %a#topic{:href => topic_path(@resource.topic_id)}= getTopicTitle(@resource.topic_id)
 
-
-%h3 Topic: 
-%p#topic= getTopicTitle(@resource.topic_id)
-
-%h3 Description:
-%p#description= @resource.description
-
-
-%h3 Link 
-%p= @resource.link
-
-%h3 Posted By 
-%p= @resource.posted_by
-
--# %li
--#    Rating:
--#    = @resource.reviews 
-%h3 Reviews
-= render @resource.reviews
+        %div.header Description:
+        %p#description= @resource.description
 
 
-%h3 Add a review:
-= form_for([@resource, @resource.reviews.build]) do |f|
-  %p
-    = f.label :user
-    %br
-    = f.text_field :user
-  %p
-    = f.label :rating
-    %br
-    = f.radio_button :rating, 1
-    = f.label :rating, 1
-    = f.radio_button :rating, 2
-    = f.label :rating, 2
-    = f.radio_button :rating, 3
-    = f.label :rating, 3
-    = f.radio_button :rating, 4
-    = f.label :rating, 4
-    = f.radio_button :rating, 5
-    = f.label :rating, 5
-  %p
-    = f.label :content
-  %br
-    = f.text_area :content
-  %p
-    = f.label :anonymous
-  %br
-    = f.check_box :anonymous
-  %p.button
-    = f.submit
+        %div.info 
+          %span Link:
+          %a{:href => "http://#{@resource.link}"}= @resource.link
+
+        %div.info
+          %span Posted By:
+          = @resource.posted_by
+
+      %div.divider
+
+      %div.content-wrapper
+        %div.title Reviews
+        %div.reviews
+          - @resource.reviews.each do |review|
+            %div.review{:id => "review-#{review.id}"}
+              %div.name= review.user
+              %div.rateit{ "data-rateit-value"=>"#{review.rating}", "data-rateit-ispreset"=>"true", "data-rateit-readonly"=>"true" }
+              %div.content
+                = review.content
+
+        %div#add-review.well
+          %dov.title Add Review
+          - if flash[:notice]
+            %div.alert.alert-danger
+              - flash[:notice].each do |msg|
+                =msg + "."
+          = form_for([@resource, @resource.reviews.build]) do |f|
+            %div.group
+              = f.label :user
+              %br
+              %input#review_user.form-control{:name => "review[user]", :type=>"text", :value => "#{flash[:review_user]}"}
+            %div.group
+              = f.label :rating
+              %br
+              - if flash[:review_rating]
+                %input#review_rating{:name => "review[rating]", :type => "range", :step=>'1', :value => flash[:review_rating]}
+              - else 
+                %input#review_rating{:name => "review[rating]", :type => "range", :step=>'1', :value => '3'}
+              %div.rateit{"data-rateit-backingfld"=>"#review_rating", "data-rateit-resetable"=>"false", "data-rateit-min"=>"0", "data-rateit-max"=>"5"}
+
+            %div.group
+              %label Description
+              %br
+              %textarea#review_content.form-control{:name=>"review[content]",:rows => '7'}
+                =flash[:review_content]
+                
+            %div.group
+              %label Post as anonymous
+              = f.check_box :anonymous
+            %input.btn.btn-primary{:type=>"submit", :value=>"Submit"}
 
 
