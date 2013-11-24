@@ -1,10 +1,10 @@
 class ResourcesController < ApplicationController
   def index
-    if params[:category].nil?
+    if params[:topic].nil?
       @resources = Resource.all
     else
-      category = params[:category]
-      @resources = Resource.where("category == #{category}")
+      topic = params[:topic]
+      @resources = Resource.where("category == ?", topic)
     end
   end
 
@@ -15,19 +15,22 @@ class ResourcesController < ApplicationController
     @resource_hash[:description] = params[:description]
     @resource_hash[:posted_by] = params[:posted_by]
     @resource_hash[:link] = params[:link]
-    @resource_hash[:category] = params[:category]
+    # @resource_hash[:category] = params[:category]
 
   end
 
   def create
-    @resource = Resource.new(params[:resource])
+    @topic = Topic.find(params[:resource][:topic_id])
+    # @resource = Resource.new(params[:resource])
+     @resource = @topic.resources.new(params[:resource])
     if !@resource.valid?
         flash[:notice] = @resource.errors.full_messages
         redirect_to new_resource_path(params[:resource]) and return
    else
-      #redirect_to resource_path(@resource.id)
       @resource.save!
-      redirect_to resource_path(@resource)
+     #  @topic.resources << @resource
+      # redirect_to resource_path(@resource)
+      redirect_to topic_path(@topic.id)
     end
   end
 

@@ -14,6 +14,10 @@
 
       = form_tag resources_path do
         %div.form-group
+          = label :resource, :topic, 'Topic', :class => "control-label"
+          = select :resource, :topic_id, Topic.all.collect {|t| [t.title, t.id] }
+
+        %div.form-group
           = label :resource, :title, 'Title', :class => "control-label"
           = text_field :resource, 'title', :class => "form-control", :placeholder => "Algebra for 8th Grade", :value => "#{@resource_hash[:title]}"
         
@@ -31,4 +35,4 @@
         
         = submit_tag 'Submit', :class => "btn btn-primary"
 
-        = link_to 'Back to Resources', resources_path
+
