@@ -8,8 +8,6 @@ describe ResourcesController do
       @mock_field.subject_id = @mock_subject.id
       @mock_topic = FactoryGirl.create(:topic)
       @mock_topic.field_id = @mock_field.id
-      @mock_topic2 = FactoryGirl.create(:topic)
-      @mock_topic2.field_id = @mock_field.id
       @mock_resource = FactoryGirl.create(:resource)
       @mock_resource.topic_id = @mock_topic.id
       @resource_array = {resource: {:title => "Algebra", :link => "algebra.com", :topic_id => @mock_topic.id}}
@@ -47,7 +45,7 @@ describe ResourcesController do
       it "should not change the resource count" do
         error_array = @resource_array.deep_dup
         error_array[:resource].delete(:title)
-        Topic.stub(:find).and_return(@mock_topic2)
+        Topic.stub(:find).and_return(@mock_topic)
         lambda do
           post :create, error_array
         end.should change(Resource, :count).by(0)
@@ -56,7 +54,7 @@ describe ResourcesController do
       it "should redirect to itself with its own params" do
         error_array = @resource_array.deep_dup
         error_array[:resource].delete(:title)
-        Topic.stub(:find).and_return(@mock_topic2)
+        Topic.stub(:find).and_return(@mock_topic)
         Resource.stub(:new).and_return(@error_resource)
         post :create, error_array
         response.should redirect_to new_resource_path(error_array[:resource])
@@ -67,11 +65,17 @@ describe ResourcesController do
       it "should redirect to itself with its own params" do
         error_array = @resource_array.deep_dup
         error_array[:resource].delete(:link)
-        Topic.stub(:find).and_return(@mock_topic2)
+        Topic.stub(:find).and_return(@mock_topic)
         Resource.stub(:new).and_return(@error_resource)
         post :create, error_array
         response.should redirect_to new_resource_path(error_array[:resource])
       end
+    end
+    after :all do
+      @mock_subject.destroy
+      @mock_topic.destroy
+      @mock_field.destroy
+      @mock_resource.destroy
     end
   end
 end
