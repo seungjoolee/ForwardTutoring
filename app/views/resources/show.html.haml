@@ -20,7 +20,7 @@
 
         %div.info 
           %span File:
-          %a{:href => @resource.pdf}= @resource.pdf_file_name
+          %a{:href => @resource.pdf}= getPdfName(@resource.id)
 
 
         %div.info

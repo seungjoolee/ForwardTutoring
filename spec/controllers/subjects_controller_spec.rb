@@ -1,3 +1,5 @@
 require 'spec_helper'
 
-do
+describe SubjectsController do
+
+end
