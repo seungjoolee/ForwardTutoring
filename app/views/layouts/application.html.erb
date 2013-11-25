@@ -6,8 +6,6 @@
   <%= stylesheet_link_tag    "application" %>
   <%= stylesheet_link_tag    "rateit" %>
   <%= yield(:stylesheets) %>
-  <%= javascript_include_tag "application" %>
-  <%= javascript_include_tag "jquery.rateit.min" %>
   <%= csrf_meta_tags %>
 </head>
 <body>
@@ -30,6 +28,10 @@
   </div>
 
 <%= yield %>
+
+<%= yield(:javascript) %>
+<%= javascript_include_tag "application" %>
+<%= javascript_include_tag "jquery.rateit.min" %>
 
 </body>
 </html>
