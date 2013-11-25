@@ -66,7 +66,5 @@ module Forwardtutoring
 
     #Necessary for Heroku deployment. Check https://devcenter.heroku.com/articles/rails-asset-pipeline
     config.assets.initialize_on_precompile = false
-    # Needed for the ActiveAdmin's manifest assets.
-    config.assets.precompile += ['active_admin.css', 'active_admin.js']
   end
 end
