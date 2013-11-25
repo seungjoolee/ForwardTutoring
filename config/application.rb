@@ -66,7 +66,5 @@ module Forwardtutoring
 
     #Necessary for Heroku deployment. Check https://devcenter.heroku.com/articles/rails-asset-pipeline
     config.assets.initialize_on_precompile = false
-    #http://guides.rubyonrails.org/asset_pipeline.html
-    config.assets.enabled = false
   end
 end
