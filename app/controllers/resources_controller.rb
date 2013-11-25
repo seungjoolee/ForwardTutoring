@@ -1,13 +1,13 @@
 class ResourcesController < ApplicationController
-  ##
-  #def index
-  #  if params[:topic].nil?
-  #    @resources = Resource.all
-  #  else
-  #    topic = params[:topic]
-  #    @resources = Resource.where("category == ?", topic)
-  #  end
-  #end
+  ##Useless. Remove tests when this ASAP
+  def index
+    if params[:topic].nil?
+      @resources = Resource.all
+    else
+      topic = params[:topic]
+      @resources = Resource.where("category == ?", topic)
+    end
+  end
 
   def new
     #render "new" template
