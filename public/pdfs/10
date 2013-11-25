@@ -1,0 +1,44 @@
+kent-evan-typo.herokuapp.com
+
+Need to understand how to rspec
+Need to change model/article.rb merge_with so it works
+
+potential bugs
+Categories
+Cache 
+
+
+
+  create_table "contents", :force => true do |t|
+    t.string   "type"
+    t.string   "title"
+    t.string   "author"
+    t.text     "body"
+    t.text     "extended"
+    t.text     "excerpt"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "user_id"
+    t.string   "permalink"
+    t.string   "guid"
+    t.integer  "text_filter_id"
+    t.text     "whiteboard"
+    t.string   "name"
+    t.boolean  "published",      :default => false
+    t.boolean  "allow_pings"
+    t.boolean  "allow_comments"
+    t.datetime "published_at"
+    t.string   "state"
+    t.integer  "parent_id"
+    t.text     "settings"
+    t.string   "post_type",      :default => "read"
+  end
+
+
+
+
+A non-admin cannot merge articles.
+When articles are merged, the merged article should contain the text of both previous articles.
+When articles are merged, the merged article should have one author (either one of the authors of the original article).  
+Comments on each of the two original articles need to all carry over and point to the new, merged article.
+The title of the new article should be the title from either one of the merged articles.

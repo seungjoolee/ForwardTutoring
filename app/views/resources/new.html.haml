@@ -13,7 +13,7 @@
           - flash[:notice].each do |msg|
             =msg + "."
 
-      = form_tag resources_path do
+      = form_tag resources_path, {:multipart => true} do
         %div.form-group
           = label :resource, :topic, 'Topic', :class => "control-label"
           %br
@@ -36,6 +36,11 @@
           = label :resource, :link, 'Link', :class => "control-label"
           = text_field :resource, 'link', :class => "form-control", :rows => "3", :placeholder => "A Link to the resource", :value => @resource_hash[:link]
         
+        %div.form-group
+          = label :resource, :pdf, 'Pdf', :class => "control-label"
+          = file_field :resource, 'pdf', :class => "form-control"
+
+
         = submit_tag 'Submit', :class => "btn btn-primary"
 
 - content_for :javascript do

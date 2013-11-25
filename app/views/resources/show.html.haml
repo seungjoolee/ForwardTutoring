@@ -18,6 +18,11 @@
           %span Link:
           %a{:href => "http://#{@resource.link}"}= @resource.link
 
+        %div.info 
+          %span File:
+          %a{:href => @resource.pdf}= getPdfName(@resource.id)
+
+
         %div.info
           %span Posted By:
           = @resource.posted_by
