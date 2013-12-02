@@ -1,4 +1,5 @@
 class ResourcesController < ApplicationController
+  ##Useless. Remove tests when this ASAP
   def index
     if params[:topic].nil?
       @resources = Resource.all
