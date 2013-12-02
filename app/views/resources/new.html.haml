@@ -33,11 +33,11 @@
           = text_area :resource, 'description', :class => "form-control", :rows => "3", :placeholder => "A short descrition of your resource", :value => @resource_hash[:description]
 
         %div.form-group
-          = label :resource, :link, 'Link', :class => "control-label"
-          = text_field :resource, 'link', :class => "form-control", :rows => "3", :placeholder => "A Link to the resource", :value => @resource_hash[:link]
-        
+          = label :resource, :link, 'Website URL', :class => "control-label"
+          = text_field :resource, 'link', :class => "form-control", :rows => "3", :placeholder => "http://en.wikipedia.org/wiki/Geometry", :value => @resource_hash[:link]
+
         %div.form-group
-          = label :resource, :pdf, 'Pdf', :class => "control-label"
+          = label :resource, :pdf, 'Upload a file', :class => "control-label"
           = file_field :resource, 'pdf', :class => "form-control"
 
 

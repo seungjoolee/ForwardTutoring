@@ -6,7 +6,7 @@ class Resource < ActiveRecord::Base
   has_attached_file :pdf , url: "/pdfs/:id", default_url: ""
 
   validates_presence_of :title, :topic_id, {:message => "should not be blank"}
-  validates_presence_of :link, {:message => "should not be blank"}
+#  validates_presence_of :link, {:message => "should not be blank"}
 #  validates_presence_of :pdf
 
 #, url: pdf_resource_path(this)

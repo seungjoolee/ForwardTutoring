@@ -4,6 +4,18 @@
 %div.container
   %div.row
     %div.col-md-10.col-md-offset-1
+      %ol.breadcrumb
+        %li 
+          %a{:href=>subjects_path()}
+            =@resource.topic.field.subject.title
+        %li 
+          %a{:href=>field_path(@resource.topic.field)}
+            =@resource.topic.field.title
+        %li 
+          %a{:href=>topic_path(@resource.topic)}
+            =@resource.topic.title
+        %li.active
+          =@resource.title
       %div.content-wrapper
         %div.title #{@resource.title}
 
@@ -13,14 +25,15 @@
         %div.header Description:
         %p#description= @resource.description
 
+        - if @resource.link and not @resource.link.empty?
+          %div.info 
+            %span Link:
+            %a{:href => "#{@resource.link}"}= @resource.link
 
-        %div.info 
-          %span Link:
-          %a{:href => "http://#{@resource.link}"}= @resource.link
-
-        %div.info 
-          %span File:
-          %a{:href => @resource.pdf}= getPdfName(@resource.id)
+        - if @resource.pdf and @resource.pdf.exists?
+          %div.info 
+            %span File:
+            %a{:href => @resource.pdf}= getPdfName(@resource.id)
 
 
         %div.info

@@ -35,8 +35,8 @@ class ResourcesController < ApplicationController
    else
       @resource.save!
      #  @topic.resources << @resource
-      # redirect_to resource_path(@resource)
-      redirect_to topic_path(@topic.id)
+      redirect_to resource_path(@resource)
+      #redirect_to topic_path(@topic.id)
     end
   end
 
