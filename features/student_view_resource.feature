@@ -5,9 +5,6 @@ Feature: Students can view a single detailed resource
   I want to view the details of that resource 
 
 Background: resources table is populated
-
-
-
   Given the following topics exist: 
   | title    |
   | Proofs   |

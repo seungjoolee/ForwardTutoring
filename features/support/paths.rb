@@ -22,6 +22,9 @@ module NavigationHelpers
     when /^the "(.*)" topic page$/
       topic_path(Topic.find_by_title($1))
 
+    when /the field page for "(.*)"/
+      field_path(Field.find_by_title($1))
+
     when /^the "(.*)" page/
       resources_path(Resource.find_by_title($1))
 

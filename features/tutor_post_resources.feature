@@ -68,15 +68,18 @@ Scenario:Successfully Post Link into Resources Page and should be on the same to
   Then I should be on the details resource page for "Area"
 
 
-#Scenario: Successfully Post File into Resources Page
-#  When I fill in "resource_title" with "Math File"
-#  And I fill in "resource_posted_by" with "Jack"
-#  And I fill in "resource_description" with "No link to google.com"
-#When I fill in "Title" with "Math File"
-#  And I upload the file "TestFile.pdf"
-#  And I press "Submit"
-#  Then I should see "Error: No Link or file posted yet"
-  
+Scenario: Successfully Post File into Resources Page
+  When I select "Proofs" from drop-down resource_topic_id menu
+  And I fill in "resource_title" with "Math File"
+  And I fill in "resource_posted_by" with "Jack"
+  And I fill in "resource_description" with "No link to google.com"
+  And I fill in "Title" with "Math File"
+  And I upload the file "README.rdoc"
+  And I press "Submit"
+  Then I should be on the "Proofs" topic page
+  And I should see the "Math File" resource
+  When I follow the "Math File" file
+  Then I should be on the pdf resource page for "Math File"
 
 #Scenario: Post invalid File into Resources Page
 #  When I fill in "resource_title" with "Math File"

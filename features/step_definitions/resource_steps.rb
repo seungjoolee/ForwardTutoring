@@ -10,8 +10,7 @@ Given /the following fields exist/ do |fields_table|
       field[:subject_id] = Subject.find_by_title(field[:subject]).id
       field.delete('subject')
       end
-      Field.create!(field)
-
+    Field.create!(field)
   end
 end
 
