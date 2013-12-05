@@ -1,11 +1,10 @@
 class ResourcesController < ApplicationController
   ##Useless. Remove tests when this ASAP
   def index
-    if params[:topic].nil?
+    if params[:search_text].nil? or params[:search_text].empty?
       @resources = Resource.all
     else
-      topic = params[:topic]
-      @resources = Resource.where("category == ?", topic)
+      @resources = Resource.where("title == ?", params[:search_text])
     end
   end
 
