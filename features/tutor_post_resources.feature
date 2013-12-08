@@ -81,6 +81,8 @@ Scenario: Successfully Post File into Resources Page
   When I follow the "Math File" file
   Then I should be on the pdf resource page for "Math File"
 
+
+
 #Scenario: Post invalid File into Resources Page
 #  When I fill in "resource_title" with "Math File"
 #  And I fill in "resource_posted_by" with "Jack"

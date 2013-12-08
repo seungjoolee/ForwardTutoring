@@ -25,6 +25,11 @@ class ResourcesController < ApplicationController
   end
 
   def create
+    topic_id = params[:resource][:topic_id]
+    if topic_id.blank?
+      flash[:notice] = ["Topic should not be blank"]
+      redirect_to new_resource_path(params[:resource]) and return
+    end
     @topic = Topic.find(params[:resource][:topic_id])
     # @resource = Resource.new(params[:resource])
      @resource = @topic.resources.new(params[:resource])
