@@ -18,7 +18,7 @@ class Resource < ActiveRecord::Base
   validates_presence_of :title, :topic_id, {:message => "should not be blank"}
   validates :title, length: { maximum: 64, too_long: "%{count} chars is the maxium allowed"}
   validates :description, length: { maximum: 150, too_long: "%{count} chars is the maximum allowed"}
-  validates :link, length: { maximum: 100, too_long: "%{count} chars is the maximum allowed"}
+  validates :link, length: { maximum: 200, too_long: "%{count} chars is the maximum allowed"}
 #  validates_presence_of :link, {:message => "should not be blank"}
 #  validates_presence_of :pdf
 
