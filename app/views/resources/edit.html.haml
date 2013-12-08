@@ -1,12 +1,12 @@
 - content_for :stylesheets do
-  = stylesheet_link_tag 'new'
+  = stylesheet_link_tag 'edit'
   = stylesheet_link_tag 'chosen.min'
 
 %div#form-container.container
   %div.row
     %div.content-wrapper.col-md-10.col-md-offset-1
       %div.container-header
-        Create Resource
+        Edit Resource
 
       - if flash[:notice]
         %div.alert.alert-danger
@@ -46,4 +46,4 @@
 - content_for :javascript do
   = javascript_include_tag '//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js'
   = javascript_include_tag 'chosen.jquery.min'
-  = javascript_include_tag 'new'
+  = javascript_include_tag 'edit'
