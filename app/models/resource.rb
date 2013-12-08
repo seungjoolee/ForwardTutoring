@@ -4,6 +4,9 @@ class Resource < ActiveRecord::Base
   belongs_to :topic
 
   has_attached_file :pdf , url: "/pdfs/:id", default_url: ""
+  #has_attached_file :pdf , url: "/pdfs/:hash.:extension",
+  #default_url: "",:hash_secret => "superLongString"
+
   validates_attachment_size :pdf, :less_than => 10.megabytes
   validates_attachment_content_type :pdf, :content_type => ["text/plain",
                                                             "application/vnd.ms-excel",

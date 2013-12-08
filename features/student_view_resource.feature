@@ -25,3 +25,4 @@ Scenario: Try to view a resource that does not exist
   When I am on the nonexistent details resource page
   Then I should be on the Resources page
   And I should see "This resource does not exist"
+
