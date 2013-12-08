@@ -5,11 +5,7 @@ Feature: Posting Reviews for materials
 
 
 Background: resources have been added to database
-
-  Given the following topics exist: 
-  | title    |
-  | Proofs   |
-  | Angles   |
+  Given the subjects are set up
 
   And the following resources exist:
   | title                         | posted_by | link | description   | topic  |

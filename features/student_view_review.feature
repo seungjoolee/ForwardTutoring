@@ -4,12 +4,7 @@ Feature: student viewing comments for a resource
   I want to read posted comments regarding a specific resource
 
 Background: comments have been added to database
-
-  Given the following topics exist: 
-  | title    |
-  | Proofs   |
-  | Angles   |
-
+  Given the subjects are set up
   And the following resources exist:
   | title                         | posted_by | link | description   | topic  |
   | title                         |  jack     | ww   | jack          | Proofs |
