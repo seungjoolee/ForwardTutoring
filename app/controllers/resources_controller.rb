@@ -15,11 +15,13 @@ class ResourcesController < ApplicationController
     @resource_hash[:description] = params[:description]
     @resource_hash[:posted_by] = params[:posted_by]
     @resource_hash[:link] = params[:link]
+
     @topics = Topic.all(:include => :field)
     @grouped_options = @topics.inject({}) do |options, topic|
       (options[topic.field.title] ||= []) << [topic.title, topic.id]
       options
     end
+    @resource_hash[:topic_id] = params[:topic_id]
     # @resource_hash[:category] = params[:category]
 
   end
@@ -43,6 +45,26 @@ class ResourcesController < ApplicationController
       #redirect_to topic_path(@topic.id)
     end
   end
+
+  def edit
+    @resource_hash = Hash.new
+    begin
+      @resource = Resource.find(params[:id])
+      @resource_hash[:title] = @resource.title
+      @resource_hash[:description] = @resource.description
+      @resource_hash[:posted_by] = @resource.posted_by
+      @resource_hash[:link] = @resource.link
+      @resource_hash[:topic_id] = @resource.topic_id
+      @topics = Topic.all(:include => :field)
+      @grouped_options = @topics.inject({}) do |options, topic|
+        (options[topic.field.title] ||= []) << [topic.title, topic.id]
+        options
+      end
+    rescue
+      flash[:notice] = "This resource does not exist"
+      redirect_to resources_path
+    end
+    end
 
   def show
     begin
