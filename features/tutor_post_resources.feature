@@ -106,10 +106,10 @@ Scenario: Post invalid File into Resources Page
   And I fill in "resource_title" with "Virus File"
   And I fill in "resource_posted_by" with "Jack"
   And I fill in "resource_description" with "No link to google.com"
-  And I upload the file "virus.exe"
+  And I upload the file "fake_virus.exe"
   And I press "Submit"
   Then I should be on the new resource page
-  Then I should see "Only PDF, Word or TEXT files are allowed"
+  Then I should see "Only PDF, WORD, EXCEL, or TEXT files are allowed"
   And I should see "Proofs"
   And I should see in "resource_title", "Virus File"
   And I should see in "resource_posted_by", "Jack"
