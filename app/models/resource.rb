@@ -13,7 +13,7 @@ class Resource < ActiveRecord::Base
                                                             "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
                                                             "application/msword",
                                                             "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
-                                                            "application/pdf"], :message => 'Only PDF, WORD, or TEXT files are allowed. '
+                                                            "application/pdf"], :message => "Only PDF, WORD, EXCEL, or TEXT files are allowed"
 
   validates_presence_of :title, :topic_id, {:message => "should not be blank"}
   validates :title, length: { maximum: 64, too_long: "%{count} chars is the maxium allowed"}
