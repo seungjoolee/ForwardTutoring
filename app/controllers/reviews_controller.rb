@@ -17,4 +17,10 @@ class ReviewsController < ApplicationController
     end
   end
 
+  def destroy
+    @resource = Resource.find(params[:resource_id])
+    @review = @resource.reviews.find(params[:id])
+    @review.destroy
+  end
+
 end

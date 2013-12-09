@@ -75,6 +75,11 @@ class ResourcesController < ApplicationController
     end
   end
 
+  def destroy
+    @resource = Resource.find(params[:id])
+    @resource.destroy
+  end
+
   private
     def resource_params
       params.require(:resource).permit(:title, :description, :downloads)
