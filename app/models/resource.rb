@@ -19,9 +19,18 @@ class Resource < ActiveRecord::Base
   validates :title, length: { maximum: 64, too_long: "%{count} chars is the maxium allowed"}
   validates :description, length: { maximum: 150, too_long: "%{count} chars is the maximum allowed"}
   validates :link, length: { maximum: 200, too_long: "%{count} chars is the maximum allowed"}
+  validate :link_xor_pdf
 #  validates_presence_of :link, {:message => "should not be blank"}
 #  validates_presence_of :pdf
 
 #, url: pdf_resource_path(this)
+  
+  private
+
+    def link_xor_pdf
+      if (!link.blank? ^ !pdf.blank?)
+        errors.add(:base, "Specify a pdf or link, not both")
+      end
+    end
 
 end
