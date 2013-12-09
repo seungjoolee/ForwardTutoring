@@ -10,9 +10,15 @@
         display: inline-block;
       }
       .pull-right {
-        .cell {
-          display: inline-block;
-          vertical-align: middle;
+        #search {
+          position: relative;
+          top: 4px;
+          padding-left:30px;
+        }
+        .glyphicon {
+          position: relative;
+          top: -21px;
+          left: 8px;
         }
       }
     } 

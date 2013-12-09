@@ -1,6 +1,11 @@
 - content_for :stylesheets do
   = stylesheet_link_tag 'fields/show'
 
+- content_for :javascripts do
+  = javascript_include_tag "searchbar"
+
+%style#search_style
+
 %div.container#fields-container
   %div.row
     %div.col-md-10.col-md-offset-1
@@ -15,14 +20,12 @@
           %div.title
             =@field.title
           %div.pull-right
-            = form_tag resources_path, method: 'get' do
-              = text_field_tag :search, '', {:name => 'search_text', :placeholder => "Search keywords"}
-              %button.btn.btn-primary{:type => "submit"}
-                %span.glyphicon.glyphicon-search
+            %input{:id=>"search", :class=>"form-control", :type=>"text", :placeholder=>"Search"}
+            %span.glyphicon.glyphicon-search
 
         %div#topics-block
           - @field.topics.each do |topic|
-            %div.panel.panel-default
+            %div.panel.panel-default.searchable{:data => {:index => "#{topic.searchable_string}"}}
               %div.panel-heading
                 %h3.panel-title 
                   %a{:href=> topic_path(topic)}
