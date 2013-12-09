@@ -12,6 +12,7 @@
         %div.alert.alert-danger
           - flash[:notice].each do |msg|
             =msg + "."
+            %br
 
       = form_tag resources_path, {:multipart => true} do
         %div.form-group

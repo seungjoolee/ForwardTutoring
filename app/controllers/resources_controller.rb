@@ -37,7 +37,7 @@ class ResourcesController < ApplicationController
     # @resource = Resource.new(params[:resource])
      @resource = @topic.resources.new(params[:resource])
     if !@resource.valid?
-        flash[:notice] = @resource.errors.full_messages
+      flash[:notice] = @resource.errors.full_messages
         redirect_to new_resource_path(params[:resource]) and return
    else
       @resource.save!
