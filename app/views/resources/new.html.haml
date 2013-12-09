@@ -43,6 +43,8 @@
 
 
         = submit_tag 'Submit', :class => "btn btn-primary"
+        %a{:href=>subjects_path()} 
+          =button_tag "Cancel", :type => 'button'
 
 - content_for :javascript do
   = javascript_include_tag '//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js'
