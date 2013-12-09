@@ -28,8 +28,8 @@ class Resource < ActiveRecord::Base
   private
 
     def link_xor_pdf
-      if (!link.blank? ^ !pdf.blank?)
-        errors.add(:base, "Specify a pdf or link, not both")
+      if !(link.blank? ^ pdf.blank?) 
+        errors.add(:base, "Specify either a pdf or link")
       end
     end
 
