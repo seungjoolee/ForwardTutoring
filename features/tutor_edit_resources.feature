@@ -14,20 +14,20 @@ Background: resources table is populated
 
 Scenario: Successful Edit Resource
 When I am on the details resource page for "Google"
-And I press "edit"
+And I follow "Edit"
 Then I should be on the edit resource page for "Google"
 When I fill in "resource_description" with "Hello world"
 And I press "Submit"
-Then I should be on the details resource page for "Area"
+Then I should be on the details resource page for "Google"
 And I should see "Hello world"
 
 
 Scenario: Unsuccessful Edit Resource by no link
 When I am on the details resource page for "Google"
-And I press "edit"
+And I follow "Edit"
 Then I should be on the edit resource page for "Google"
 When I fill in "resource_link" with ""
 And I press "Submit"
 Then I should be on the edit resource page for "Google"
-Then I should see in the header "Link should not be blank"
+Then I should see in the header "Specify either a pdf or link"
 

@@ -63,9 +63,22 @@ class ResourcesController < ApplicationController
       end
     rescue
       flash[:notice] = "This resource does not exist"
-      redirect_to resources_path
+      redirect_to subjects_path
     end
     end
+
+  def update
+    @resource = Resource.find params[:id]
+    begin
+    @resource.update_attributes!(params[:resource])
+    flash[:notice] = ["#{@resource.title} was successfully updated."]
+    redirect_to resource_path(@resource) and return
+    rescue
+      flash[:notice] = @resource.errors.full_messages
+      redirect_to edit_resource_path(params[:resource]) and return
+    end
+  end
+
 
   def show
     begin
