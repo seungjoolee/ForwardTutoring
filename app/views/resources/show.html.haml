@@ -50,7 +50,10 @@
         %div.reviews
           - @resource.reviews.each do |review|
             %div.review{:id => "review-#{review.id}"}
-              %div.name= review.user
+              - if review.anonymous
+                %div.name= "Anonymous"
+              - else
+                %div.name= review.user
               %div.rateit{ "data-rateit-value"=>"#{review.rating}", "data-rateit-ispreset"=>"true", "data-rateit-readonly"=>"true" }
               %div.content
                 = review.content

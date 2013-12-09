@@ -34,8 +34,5 @@ class Resource < ActiveRecord::Base
         errors.add(:base, "Specify either a pdf or link")
       end
     end
-
-    def validate_url
-      if !link.blank?
-
+    
 end
