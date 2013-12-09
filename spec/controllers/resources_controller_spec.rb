@@ -37,7 +37,8 @@ describe ResourcesController do
         Topic.stub(:find).and_return(@mock_topic)
         Resource.stub(:new).and_return(@mock_resource)
         post :create, @resource_array
-        response.should redirect_to topic_path(@mock_topic.id)
+        #response.should redirect_to topic_path(@mock_topic.id)
+        response.should redirect_to resource_path(@mock_resource.id)
       end
   end
 
