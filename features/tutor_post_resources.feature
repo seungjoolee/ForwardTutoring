@@ -39,7 +39,7 @@ Scenario: No link in new resources
   And I fill in "resource_posted_by" with "Jack" 
   And I fill in "resource_description" with "No link to google.com"
   And I press "Submit"
-  Then I should see in the header "Link should not be blank"
+  Then I should see in the header "Specify either a pdf or link"
   And I should be on the new resource page
   And I should see in "resource_title", "Google"
   And I should see in "resource_posted_by", "Jack"

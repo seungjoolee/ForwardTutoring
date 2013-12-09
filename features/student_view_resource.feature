@@ -13,8 +13,8 @@ Background: resources table is populated
   | Yahoo    | Jack      | http:yahoo.com    | A yahoo site  | Proofs |
 
 Scenario: View resource
-When I am on the Resources page
-Then I should see the "Google" resource
+When I am on the topic page for "Proofs"
+Then I should see "Google"
 When I follow the "Google" link
 Then I should be on the details resource page for "Google"
 And I should see "John"
@@ -23,6 +23,6 @@ And I should see "http://google.com"
   
 Scenario: Try to view a resource that does not exist
   When I am on the nonexistent details resource page
-  Then I should be on the Resources page
+  Then I should be on the subjects page
   And I should see "This resource does not exist"
 

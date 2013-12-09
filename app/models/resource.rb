@@ -20,19 +20,19 @@ class Resource < ActiveRecord::Base
   validates :description, length: { maximum: 150, too_long: "%{count} chars is the maximum allowed"}
   validates :link, length: { maximum: 200, too_long: "%{count} chars is the maximum allowed"}
   validate :link_xor_pdf
-  validates :email, :allow_blank => true, :uniqueness => { :case_sensitive => false } 
-  validates_format_of :link, :with => /^(http|https):\/\/[a-z0-9]+([\-\.]{1}[a-z0-9]+)*\.[a-z]{2,5}(([0-9]{1,5})?\/.*)?$/ix, :allow_blank => true
+  #validates :link, :allow_blank => true, :uniqueness => { :case_sensitive => false }
+  #validates_format_of :link, :with => /^(http|https):\/\/[a-z0-9]+([\-\.]{1}[a-z0-9]+)*\.[a-z]{2,5}(([0-9]{1,5})?\/.*)?$/ix, :allow_blank => true
 #  validates_presence_of :link, {:message => "should not be blank"}
 #  validates_presence_of :pdf
 
 #, url: pdf_resource_path(this)
-  
+
   private
 
     def link_xor_pdf
-      if !(link.blank? ^ pdf.blank?) 
+      if !(link.blank? ^ pdf.blank?)
         errors.add(:base, "Specify either a pdf or link")
       end
     end
-    
+
 end

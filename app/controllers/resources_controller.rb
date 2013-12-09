@@ -1,11 +1,12 @@
 class ResourcesController < ApplicationController
   ##Useless. Remove tests when this ASAP
   def index
-    if params[:search_text].nil? or params[:search_text].empty?
-      @resources = Resource.all
-    else
-      @resources = Resource.where("title == ?", params[:search_text])
-    end
+    redirect_to(subjects_path)
+    #if params[:search_text].nil? or params[:search_text].empty?
+    #  @resources = Resource.all
+    #else
+    #  @resources = Resource.where("title == ?", params[:search_text])
+    #end
   end
 
   def new
@@ -71,7 +72,7 @@ class ResourcesController < ApplicationController
     @resource = Resource.find(params[:id])
     rescue
       flash[:notice] = "This resource does not exist"
-      redirect_to resources_path
+      redirect_to subjects_path
     end
   end
 

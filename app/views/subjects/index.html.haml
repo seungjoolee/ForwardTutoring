@@ -1,6 +1,9 @@
 - content_for :stylesheets do
   = stylesheet_link_tag 'index'
 
+- if flash[:notice]
+  #notice.message= flash[:notice]
+
 %div.container#subjects-container
   %div.row
     %div.col-md-10.col-md-offset-1

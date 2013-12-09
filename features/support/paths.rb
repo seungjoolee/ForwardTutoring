@@ -19,7 +19,10 @@ module NavigationHelpers
     when /^the subjects page$/
       subjects_path
 
-    when /^the "(.*)" topic page$/
+   when /^the "(.*)" topic page$/
+      topic_path(Topic.find_by_title($1))
+
+    when /the topic page for "(.*)"/
       topic_path(Topic.find_by_title($1))
 
     when /the field page for "(.*)"/
