@@ -1,12 +1,13 @@
 class ResourcesController < ApplicationController
 
 before_filter :check_for_cancel, :only => [:create, :update]
+before_filter :require_login, :only => [:new, :edit, :update]
 
   def check_for_cancel
-      if params[:commit] == "Cancel"
-            redirect_to subjects_path
-          end
+    if params[:commit] == "Cancel"
+      redirect_to subjects_path
     end
+  end
 
   ##Useless. Remove tests when this ASAP
   def index
@@ -104,9 +105,14 @@ before_filter :check_for_cancel, :only => [:create, :update]
     redirect_to subjects_path
   end
 
-  private
-    def resource_params
-      params.require(:resource).permit(:title, :description, :downloads)
-    end
+  def resource_params
+    params.require(:resource).permit(:title, :description, :downloads)
+  end
+
+  def require_login
+    redirect_to log_in_url unless is_tutor
+  end
+
+  private :resource_params, :require_login
 
 end
