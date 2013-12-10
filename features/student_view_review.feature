@@ -14,12 +14,12 @@ Background: comments have been added to database
   | Quantum Computing             |  jack     | ww   | jack          | Proofs |
 
   Given the following reviews exist:
-  | resource                         | content                                       | rating | user |
-  | Basic Algebra                    | Very helpful!                                 | 1 | jack |
-  | Basic Algebra                    | Is it possible to show more examples?         | 2 | jack |
-  | Basic Algebra                    | Could anyone elaborate more on Q2?            | 3 | jack |
-  | English and the Language         | Thank you so much! You saved me life!         | 4 | jack |
-  | Quantum Computing                | Hardcore stuff!!                              | 5 | jack |
+  | resource                         | content                                       | rating | user | anonymous |
+  | Basic Algebra                    | Very helpful!                                 | 1      | jack | true      | 
+  | Basic Algebra                    | Is it possible to show more examples?         | 2      | jack | true      |
+  | Basic Algebra                    | Could anyone elaborate more on Q2?            | 3      | jack | false     |
+  | English and the Language         | Thank you so much! You saved me life!         | 4      | jack | false     |
+  | Quantum Computing                | Hardcore stuff!!                              | 5      | jack | true      |
 
   And I am on the ForwardTutoring resource page
 
@@ -27,6 +27,16 @@ Scenario: View all the reviews under Basic Algebra
   When I go to the details resource page for "Basic Algebra"
   Then I should see the following reviews: "Very helpful!", "Is it possible to show more examples?", "Could anyone elaborate more on Q2?"
   And I should not see the following reviews: "Thank you so much! You saved me life!", "Hardcore stuff!!"
+
+Scenario: View all the reviews under English and the Language 
+  When I go to the details resource page for "English and the Language"
+  Then I should see the following reviews: "jack"
+  And I should not see the following reviews: "Anonymous"
+
+Scenario: View all the reviews under Quantum Computing 
+  When I go to the details resource page for "Quantum Computing"
+  Then I should not see the following reviews: "jack"
+  And I should see the following reviews: "Anonymous"
 
 Scenario: View all the reviews under World Geography
   When I go to the details resource page for "World Geography for 7th Grade" 

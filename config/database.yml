@@ -19,7 +19,12 @@ test:
   timeout: 5000
 
 production:
-  adapter: sqlite3
-  database: db/production.sqlite3
+  adapter: mysql2
+  encoding: utf8
+  reconnect: false
+  database: forwarg1_cs169
   pool: 5
-  timeout: 5000
+  username: forwarg1_ft
+  password: bAdR!55u$5
+  host: forwardtutoring.org
+  port: 3306
