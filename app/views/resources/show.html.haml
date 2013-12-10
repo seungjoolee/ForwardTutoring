@@ -70,27 +70,28 @@
                 %br
                 = link_to 'Delete', resource_review_path(@resource.id, review.id), :confirm => 'Are you sure?', :method => :delete
 
-        %div#add-review.well
-          %dov.title Add Review
-          = form_for([@resource, @resource.reviews.build]) do |f|
-            %div.group
-              = f.label :rating
-              %br
-              - if flash[:review_rating]
-                %input#review_rating{:name => "review[rating]", :type => "range", :step=>'1', :value => flash[:review_rating]}
-              - else 
-                %input#review_rating{:name => "review[rating]", :type => "range", :step=>'1', :value => '3'}
-              %div.rateit{"data-rateit-backingfld"=>"#review_rating", "data-rateit-resetable"=>"false", "data-rateit-min"=>"0", "data-rateit-max"=>"5"}
+        - if current_user
+          %div#add-review.well
+            %dov.title Add Review
+            = form_for([@resource, @resource.reviews.build]) do |f|
+              %div.group
+                = f.label :rating
+                %br
+                - if flash[:review_rating]
+                  %input#review_rating{:name => "review[rating]", :type => "range", :step=>'1', :value => flash[:review_rating]}
+                - else 
+                  %input#review_rating{:name => "review[rating]", :type => "range", :step=>'1', :value => '3'}
+                %div.rateit{"data-rateit-backingfld"=>"#review_rating", "data-rateit-resetable"=>"false", "data-rateit-min"=>"0", "data-rateit-max"=>"5"}
 
-            %div.group
-              %label Description
-              %br
-              %textarea#review_content.form-control{:name=>"review[content]",:rows => '7'}
-                =flash[:review_content]
-                
-            %div.group
-              %label Post as anonymous
-              = f.check_box :anonymous
-            %input.btn.btn-primary{:type=>"submit", :value=>"Submit"}
+              %div.group
+                %label Description
+                %br
+                %textarea#review_content.form-control{:name=>"review[content]",:rows => '7'}
+                  =flash[:review_content]
+                  
+              %div.group
+                %label Post as anonymous
+                = f.check_box :anonymous
+              %input.btn.btn-primary{:type=>"submit", :value=>"Submit"}
 
 
