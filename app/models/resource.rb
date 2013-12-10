@@ -1,7 +1,8 @@
 class Resource < ActiveRecord::Base
   has_many :reviews
-  attr_accessible :title, :posted_by, :description, :link, :topic_id, :pdf, :pdf_file_name
+  attr_accessible :title, :posted_by, :description, :link, :topic_id, :pdf, :pdf_file_name, :pdf_content_type, :pdf_file_size
   belongs_to :topic
+  before_validation :process_link
 
   #has_attached_file :pdf , url: "/pdfs/:id", default_url: ""
   has_attached_file :pdf , url: "/pdfs/:hash.:extension",
@@ -21,7 +22,7 @@ class Resource < ActiveRecord::Base
   validates :link, length: { maximum: 200, too_long: "%{count} chars is the maximum allowed"}
   validate :link_xor_pdf
   #validates :link, :allow_blank => true, :uniqueness => { :case_sensitive => false }
-  #validates_format_of :link, :with => /^(http|https):\/\/[a-z0-9]+([\-\.]{1}[a-z0-9]+)*\.[a-z]{2,5}(([0-9]{1,5})?\/.*)?$/ix, :allow_blank => true
+  validates_format_of :link, :with => /^(http|https):\/\/[a-z0-9]+([\-\.]{1}[a-z0-9]+)*\.[a-z]{2,5}(([0-9]{1,5})?\/.*)?$/ix, :allow_blank => true
 #  validates_presence_of :link, {:message => "should not be blank"}
 #  validates_presence_of :pdf
 
@@ -30,8 +31,14 @@ class Resource < ActiveRecord::Base
   private
 
     def link_xor_pdf
-      if !(link.blank? ^ pdf.blank?)
+      if !(self.link.blank? ^ self.pdf.blank?)
         errors.add(:base, "Specify either a pdf or link")
+      end
+    end
+
+    def process_link
+      if !self.link.blank? & !self.link.start_with?('http://', 'https://')
+        self.link.insert(0, 'http://')
       end
     end
 

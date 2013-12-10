@@ -1,4 +1,13 @@
 class ResourcesController < ApplicationController
+
+before_filter :check_for_cancel, :only => [:create, :update]
+
+  def check_for_cancel
+      if params[:commit] == "Cancel"
+            redirect_to subjects_path
+          end
+    end
+
   ##Useless. Remove tests when this ASAP
   def index
     redirect_to(subjects_path)
@@ -92,6 +101,7 @@ class ResourcesController < ApplicationController
   def destroy
     @resource = Resource.find(params[:id])
     @resource.destroy
+    redirect_to subjects_path
   end
 
   private
