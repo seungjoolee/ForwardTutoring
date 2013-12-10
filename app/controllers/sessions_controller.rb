@@ -3,12 +3,16 @@ class SessionsController < ApplicationController
   end
 
   def create
-  	user = DrUser.authenticate(params[:name], params[:pass])
+    puts "========" + params[:session].to_s
+  	user = DrUser.authenticate(params[:session][:name], params[:session][:password])
   	if user
   		session[:user_uid] = user.uid
   		redirect_to :subjects
   	else
-  		flash.now.alert = "Invalid email or password"
+  		flash[:notice] = "Invalid email or password"
+      if params[:session][:name]
+        flash[:name] = params[:session][:name]
+      end
   		render "new"
   	end
   end
