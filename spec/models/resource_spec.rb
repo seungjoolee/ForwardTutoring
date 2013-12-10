@@ -39,10 +39,11 @@ it "should error without a topic id" do
       empty_link = Hash[@resource_hash]
       empty_link.delete(:link)
       resource = Resource.new(empty_link)
+      puts resource
       resource.should_not be_valid
     end
-    
-        it "should error with an long title" do
+
+    it "should error with an long title" do
       long_title = Hash[@resource_hash]
       long_title[:title] = "longlonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglong"
       resource = Resource.new(long_title)
