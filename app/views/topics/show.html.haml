@@ -50,3 +50,5 @@
                 %div.title 
                   %a{:href=>resource_path(resource)}
                     = resource.title
+                  \:
+                  = getDescriptionSummary(resource.description)

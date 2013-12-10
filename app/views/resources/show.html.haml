@@ -1,6 +1,12 @@
 - content_for :stylesheets do
   = stylesheet_link_tag 'resources/show'
 
+- if flash[:notice]
+  %div.alert.alert-danger
+    - flash[:notice].each do |msg|
+      =msg + "."
+      %br
+
 %div.container
   %div.row
     %div.col-md-10.col-md-offset-1
@@ -60,10 +66,6 @@
 
         %div#add-review.well
           %dov.title Add Review
-          - if flash[:notice]
-            %div.alert.alert-danger
-              - flash[:notice].each do |msg|
-                =msg + "."
           = form_for([@resource, @resource.reviews.build]) do |f|
             %div.group
               = f.label :user
