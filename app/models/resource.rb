@@ -1,7 +1,6 @@
 class Resource < ActiveRecord::Base
-  has_many :reviews
   attr_accessible :title, :posted_by, :description, :link, :topic_id, :pdf, :pdf_file_name, :pdf_content_type, :pdf_file_size
-  belongs_to :topic
+
   before_validation :process_link
 
   #has_attached_file :pdf , url: "/pdfs/:id", default_url: ""
@@ -27,6 +26,10 @@ class Resource < ActiveRecord::Base
 #  validates_presence_of :pdf
 
 #, url: pdf_resource_path(this)
+
+  has_many :reviews
+  belongs_to :topic
+  belongs_to :dr_user
 
   private
 
