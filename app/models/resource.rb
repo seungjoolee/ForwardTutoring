@@ -40,7 +40,8 @@ class Resource < ActiveRecord::Base
     end
 
     def process_link
-      if !self.link.blank? & !self.link.start_with?('http://', 'https://')
+      if !self.link.blank? and !self.link.start_with?('http://', 'https://')
+     #if !self.link.blank? & !self.link.start_with?('http://', 'https://')
         self.link.insert(0, 'http://')
       end
     end

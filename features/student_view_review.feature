@@ -6,12 +6,12 @@ Feature: student viewing comments for a resource
 Background: comments have been added to database
   Given the subjects are set up
   And the following resources exist:
-  | title                         | posted_by | link | description   | topic  |
-  | title                         |  jack     | ww   | jack          | Proofs |
-  | Basic Algebra                 |  jack     | ww   | jack          | Proofs |
-  | English and the Language      |  jack     | ww   | jack          | Proofs |
-  | World Geography for 7th Grade |  jack     | ww   | jack          | Proofs |
-  | Quantum Computing             |  jack     | ww   | jack          | Proofs |
+  | title                         | posted_by | link         | description   | topic  |
+  | title                         |  jack     | google.com   | jack          | Proofs |
+  | Basic Algebra                 |  jack     | google.com   | jack          | Proofs |
+  | English and the Language      |  jack     | google.com   | jack          | Proofs |
+  | World Geography for 7th Grade |  jack     | google.com   | jack          | Proofs |
+  | Quantum Computing             |  jack     | google.com   | jack          | Proofs |
 
   Given the following reviews exist:
   | resource                         | content                                       | rating | user | anonymous |

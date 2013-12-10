@@ -1,19 +1,20 @@
 Feature: Posting Reviews for materials
   As a student of the website
   So that I can ask questions, provide feedback regarding the resources
-  I want to post reviews for both other students and tutors to see and reply to.
+  I want to post reviews for both other students and tutors to see and reply to and rate resources based on a 5 point rating system
+
+
 
 
 Background: resources have been added to database
   Given the subjects are set up
 
   And the following resources exist:
-  | title                         | posted_by | link | description   | topic  |
-  | title                         |  jack     | ww   | jack          | Proofs |
-  | Basic Algebra                 |  jack     | ww   | jack          | Proofs |
-  | English and the Language      |  jack     | ww   | jack          | Proofs |
-  | World Geography for 7th Grade |  jack     | ww   | jack          | Proofs |
-  | Quantum Computing             |  jack     | ww   | jack          | Proofs |
+  | title                         | posted_by | link         | description   | topic  |
+  | Basic Algebra                 |  jack     | http://google.com   | jack          | Proofs |
+  | English and the Language      |  jack     | google.com   | jack          | Proofs |
+  | World Geography for 7th Grade |  jack     | google.com   | jack          | Proofs |
+  | Quantum Computing             |  jack     | google.com   | jack          | Proofs |
 
   And I am on the ForwardTutoring resource page
 
