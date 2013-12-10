@@ -2,6 +2,7 @@ class Resource < ActiveRecord::Base
   has_many :reviews
   attr_accessible :title, :posted_by, :description, :link, :topic_id, :pdf, :pdf_file_name
   belongs_to :topic
+  before_save :process_link
 
   #has_attached_file :pdf , url: "/pdfs/:id", default_url: ""
   has_attached_file :pdf , url: "/pdfs/:hash.:extension",
@@ -30,8 +31,14 @@ class Resource < ActiveRecord::Base
   private
 
     def link_xor_pdf
-      if !(link.blank? ^ pdf.blank?)
+      if !(self.link.blank? ^ self.pdf.blank?)
         errors.add(:base, "Specify either a pdf or link")
+      end
+    end
+
+    def process_link
+      if !(self.link.start_with?('http://', 'https://'))
+        self.link.insert(0, 'http://')
       end
     end
 
