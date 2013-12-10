@@ -1,6 +1,6 @@
 class Resource < ActiveRecord::Base
   has_many :reviews
-  attr_accessible :title, :posted_by, :description, :link, :topic_id, :pdf, :pdf_file_name
+  attr_accessible :title, :posted_by, :description, :link, :topic_id, :pdf, :pdf_file_name, :pdf_content_type, :pdf_file_size
   belongs_to :topic
 
   #has_attached_file :pdf , url: "/pdfs/:id", default_url: ""
