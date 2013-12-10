@@ -1,12 +1,12 @@
 - content_for :stylesheets do
-  = stylesheet_link_tag 'edit'
+  = stylesheet_link_tag 'new'
   = stylesheet_link_tag 'chosen.min'
 
 %div#form-container.container
   %div.row
     %div.content-wrapper.col-md-10.col-md-offset-1
       %div.container-header
-        Edit Resource
+        Create Resource
 
       - if flash[:notice]
         %div.alert.alert-danger
@@ -14,7 +14,7 @@
             =msg + "."
             %br
 
-      = form_tag resource_path, {:method => :put, :multipart => true} do
+      = form_tag resources_path, {:multipart => true} do
         %div.form-group
           = label :resource, :topic, 'Topic*', :class => "control-label"
           %br
@@ -34,21 +34,27 @@
           = text_area :resource, 'description', :class => "form-control", :rows => "3", :placeholder => "A short descrition of your resource", :value => @resource_hash[:description]
 
         %div.form-group
-          = label :resource, :link, 'Post a Website Link', :class => "control-label"
+<<<<<<< HEAD
+          = label :resource, :link, 'Website URL', :class => "control-label"
           = text_field :resource, 'link', :class => "form-control", :rows => "3", :placeholder => "http://en.wikipedia.org/wiki/Geometry", :value => @resource_hash[:link]
+
+=======
+          = label :resource, :link, 'Post a Website Link', :class => "control-label"
+          = text_field :resource, 'link', :class => "form-control", :rows => "3", :placeholder => "http://en.wikipedia.org/wiki/Geometry", :value => @resource_hash[:link] || "http://"
         %div
-          Or
+          Or 
         %br
+>>>>>>> c22fdeea4dc8550b5bcb28ccfdd6f962d1704d77
         %div.form-group
           = label :resource, :pdf, 'Upload a file', :class => "control-label"
           = file_field :resource, 'pdf'
 
 
         = submit_tag 'Submit', :class => "btn btn-primary"
-        %a{:href=>resource_path(@resource)} 
+        %a{:href=>subjects_path()} 
           =button_tag "Cancel", :type => 'button'
 
 - content_for :javascript do
   = javascript_include_tag '//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js'
   = javascript_include_tag 'chosen.jquery.min'
-  = javascript_include_tag 'edit'
+  = javascript_include_tag 'new'
