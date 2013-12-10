@@ -1,6 +1,6 @@
 class DrUser < ActiveRecord::Base
   # attr_accessible :title, :body
-  attr_accessible :mail, :pass, :uid
+  attr_accessible :mail, :pass, :uid, :name
 
   has_many :resources
   has_many :reviews
