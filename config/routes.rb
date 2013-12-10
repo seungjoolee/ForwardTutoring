@@ -1,4 +1,7 @@
 Forwardtutoring::Application.routes.draw do
+  get "log_out" => "sessions#destroy", :as => "log_out"
+  get "log_in" => "sessions#new", :as => "log_in"
+
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
 
@@ -17,11 +20,11 @@ Forwardtutoring::Application.routes.draw do
   #   resources :products
 
   #map.root :controller => "user"
-  root :to => redirect('/users')
+  root :to => redirect("/subjects")
   resources :subjects
   resources :fields
   resources :topics
-  resources :users
+  resources :sessions
   resources :resources do
     resources :reviews
   end

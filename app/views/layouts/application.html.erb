@@ -18,9 +18,18 @@
             <%= link_to image_tag("forwardtutoring_qcl_logo.jpg"), subjects_path %>
           </div>
           <div id="nav" class="pull-right">
-            <div class="option">
-              <%= link_to 'Create Resource', new_resource_path %>
-            </div>
+            <% if is_tutor %>
+              <div class="option">
+                <%= link_to 'Create Resource', new_resource_path %>
+              </div>
+            <% end %>
+            
+            <% if current_user %>
+              Logged in as <%= current_user.name %>.
+              <%= link_to "Logout", log_out_path %>
+            <% else %>
+              <%= link_to "Log In", log_in_path %>
+            <% end %>
           </div>
         </div>   
       </div>
