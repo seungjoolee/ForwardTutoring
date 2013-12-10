@@ -15,10 +15,13 @@ Forwardtutoring::Application.routes.draw do
 
   # Sample resource route (maps HTTP verbs to controller actions automatically):
   #   resources :products
-  
+
+  #map.root :controller => "user"
+  root :to => redirect('/users')
   resources :subjects
   resources :fields
   resources :topics
+  resources :users
   resources :resources do
     resources :reviews
   end

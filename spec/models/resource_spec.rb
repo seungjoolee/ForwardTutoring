@@ -41,8 +41,42 @@ it "should error without a topic id" do
       resource = Resource.new(empty_link)
       resource.should_not be_valid
     end
+    
+        it "should error with an long title" do
+      long_title = Hash[@resource_hash]
+      long_title[:title] = "longlonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglong"
+      resource = Resource.new(long_title)
+      resource.should_not be_valid
+    end
 
-    it "should pick only 1 of the link or the file"
+    it "should error with an long link" do
+      long_link = Hash[@resource_hash]
+      long_link[:link] = "longlonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglong"
+      resource = Resource.new(long_link)
+      resource.should_not be_valid
+    end
+
+    it "should error with an long link" do
+      long_description = Hash[@resource_hash]
+      long_description[:description] = "longlonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglong"
+      resource = Resource.new(long_description)
+      resource.should_not be_valid
+    end
+
+    it "should error with both pdf and link empty" do
+      empty_pdfandlink = Hash[@resource_hash]
+      empty_pdfandlink[:pdf] = ""
+      empty_pdfandlink[:link] = ""
+      resource = Resource.new(empty_pdfandlink)
+      resource.should_not be_valid
+    end
+
+    #it "should pick only 1 of the link or the file"
+      #both_pdfandlink = Hash[@resource_hash]
+      #both_pdfandlink[:pdf] = "google.pdf"
+      #resource = Resource.new(both_pdfandlink)
+      #resource.should_not be_valid
+   # end
   end
 
   describe "Associations" do
