@@ -10,7 +10,7 @@ Background: resources table is populated
   And the following resources exist: 
   | title    | posted_by | link              | description   | topic  |
   | Google   | John      | http://google.com | A google site | Proofs |
-  | Yahoo    | Jack      | http:yahoo.com    | A yahoo site  | Proofs |
+  | Yahoo    | Jack      | http://yahoo.com    | A yahoo site  | Proofs |
 
 Scenario: View resource
 When I am on the topic page for "Proofs"

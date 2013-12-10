@@ -10,7 +10,7 @@ Given the subjects are set up
         And the following resources exist: 
   | title    | posted_by | link              | description   | topic  |
   | Google   | John      | http://google.com | A google site | Proofs |
-  | Yahoo    | Jack      | http:yahoo.com    | A yahoo site  | Triangles |
+  | Yahoo    | Jack      | http://yahoo.com    | A yahoo site  | Triangles |
 
 
 Scenario: Search for nonexistent resources in the field page
