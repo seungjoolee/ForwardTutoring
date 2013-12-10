@@ -5,6 +5,7 @@ Feature: User Login On Website
 
 Background: on the new resource page with topics populated 
 
+  Given I am logged in
   Given the following accounts exist: 
   | name     | email 			| password | 
   | John     | john@hotmail.com         | john	   |

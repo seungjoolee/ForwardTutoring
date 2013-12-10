@@ -5,6 +5,7 @@ Feature: student finding resources
 
 Background: resources have been added to database
   Given the subjects are set up
+  And I am logged in
 
 Scenario: Get to the Proofs page under Geometry
   Given I am on the subjects page

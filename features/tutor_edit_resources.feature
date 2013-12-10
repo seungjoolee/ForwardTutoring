@@ -6,10 +6,11 @@ Feature: Students can view a single detailed resource
 
 Background: resources table is populated
   Given the subjects are set up
+  And I am logged in
 
   And the following resources exist: 
-  | title    | posted_by | link              | description   | topic  |
-  | Google   | John      | http://google.com | A google site | Proofs |
+  | title    | link              | description   | topic  |
+  | Google   | http://google.com | A google site | Proofs |
 
 Scenario: Successful Edit Resource
 When I am on the details resource page for "Google"

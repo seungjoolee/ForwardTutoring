@@ -8,13 +8,14 @@ Feature: Posting Reviews for materials
 
 Background: resources have been added to database
   Given the subjects are set up
+  And I am logged in
 
   And the following resources exist:
-  | title                         | posted_by | link         | description   | topic  |
-  | Basic Algebra                 |  jack     | http://google.com   | jack          | Proofs |
-  | English and the Language      |  jack     | google.com   | jack          | Proofs |
-  | World Geography for 7th Grade |  jack     | google.com   | jack          | Proofs |
-  | Quantum Computing             |  jack     | google.com   | jack          | Proofs |
+  | title                         | link         | description   | topic  |
+  | Basic Algebra                 |http://google.com   | jack          | Proofs |
+  | English and the Language      | google.com   | jack          | Proofs |
+  | World Geography for 7th Grade | google.com   | jack          | Proofs |
+  | Quantum Computing             | google.com   | jack          | Proofs |
 
   And I am on the ForwardTutoring resource page
 

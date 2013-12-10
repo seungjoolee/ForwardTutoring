@@ -20,4 +20,10 @@ science = Subject.create(:title => "Science")
   biology = science.fields.create(:title => "Biology")
   chemistry = science.fields.create(:title => "Chemistry")
   physics = science.fields.create(:title => "Physics")
+
+  user = DrUser.create(mail: "Tutor", pass: "a6957055e16a029de615583f3029e7ae",
+                name: "Tutor")
+  user.uid = user.id
+  DrUsersRole.create(id: user.id, uid: user.uid, rid: 5)
+
 end

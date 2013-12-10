@@ -6,11 +6,12 @@ Feature: student search for resources
 Background: resources have been added to database
 	    
 Given the subjects are set up
+  And I am logged in
 
         And the following resources exist: 
-  | title    | posted_by | link              | description   | topic  |
-  | Google   | John      | http://google.com | A google site | Proofs |
-  | Yahoo    | Jack      | http://yahoo.com    | A yahoo site  | Triangles |
+  | title    |link              | description   | topic  |
+  | Google   | http://google.com | A google site | Proofs |
+  | Yahoo    | http://yahoo.com    | A yahoo site  | Triangles |
 
 
 Scenario: Search for nonexistent resources in the field page

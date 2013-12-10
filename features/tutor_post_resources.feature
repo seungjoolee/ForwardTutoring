@@ -4,6 +4,7 @@ Feature: Posting Study Materials
   I want to post links and files into a resources page
 
 Background: on the new resource page with topics populated 
+  Given I am logged in
 
   Given the following subjects exist: 
   | title    | 

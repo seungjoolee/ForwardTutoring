@@ -28,6 +28,7 @@ Given /the following resources exist/ do |resources_table|
   resources_table.hashes.each do |resource|
     resource[:topic_id] = Topic.find_by_title(resource[:topic]).id
     resource.delete('topic')
+    resource[:dr_user_id] = 9000
     Resource.create!(resource)
   end
 end
