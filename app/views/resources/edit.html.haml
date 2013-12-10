@@ -21,7 +21,7 @@
           =# select :resource, :topic_id, Topic.all.collect {|t| [t.title, t.id] }
 
         %div.form-group
-          = label :resource, :title, 'Title', :class => "control-label"
+          = label :resource, :title, 'Title*', :class => "control-label"
           = text_field :resource, 'title', :class => "form-control", :placeholder => "Algebra for 8th Grade", :value => "#{@resource_hash[:title]}"
         
         %div.form-group
@@ -42,6 +42,8 @@
 
 
         = submit_tag 'Submit', :class => "btn btn-primary"
+        %a{:href=>resource_path(@resource)} 
+          =button_tag "Cancel", :type => 'button'
 
 - content_for :javascript do
   = javascript_include_tag '//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js'
