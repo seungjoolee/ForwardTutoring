@@ -43,6 +43,9 @@
           = @resource.posted_by
 
         %a{:href=> edit_resource_path(@resource.id)} Edit
+        %p
+        = link_to 'Delete', resource_path(@resource.id), :confirm => 'Are you sure?', :method => :delete
+
       %div.divider
 
       %div.content-wrapper
@@ -57,6 +60,8 @@
               %div.rateit{ "data-rateit-value"=>"#{review.rating}", "data-rateit-ispreset"=>"true", "data-rateit-readonly"=>"true" }
               %div.content
                 = review.content
+              %p
+              = link_to 'Delete', resource_review_path(@resource.id, review.id), :confirm => 'Are you sure?', :method => :delete
 
         %div#add-review.well
           %dov.title Add Review
