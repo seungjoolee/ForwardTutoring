@@ -21,6 +21,7 @@ class ReviewsController < ApplicationController
     @resource = Resource.find(params[:resource_id])
     @review = @resource.reviews.find(params[:id])
     @review.destroy
+    redirect_to resource_path(@resource)
   end
 
 end
