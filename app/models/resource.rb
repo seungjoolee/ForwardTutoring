@@ -1,5 +1,5 @@
 class Resource < ActiveRecord::Base
-  attr_accessible :title, :posted_by, :description, :link, :topic_id, :pdf, :pdf_file_name, :pdf_content_type, :pdf_file_size
+  attr_accessible :title, :dr_user_id, :description, :link, :topic_id, :pdf, :pdf_file_name, :pdf_content_type, :pdf_file_size
 
   before_validation :process_link
 

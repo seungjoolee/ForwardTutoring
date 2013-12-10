@@ -25,9 +25,9 @@
           = label :resource, :title, 'Title*', :class => "control-label"
           = text_field :resource, 'title', :class => "form-control", :placeholder => "Algebra for 8th Grade", :value => "#{@resource_hash[:title]}"
         
-        %div.form-group
-          = label :resource, :posted_by, 'Posted by ', :class => "control-label"
-          = text_field( :resource, 'posted_by', :class => "form-control", :placeholder => "John Smith", :value => "#{@resource_hash[:posted_by]}")
+        / %div.form-group
+        /   = label :resource, :posted_by, 'Posted by ', :class => "control-label"
+        /   = text_field( :resource, 'posted_by', :class => "form-control", :placeholder => "John Smith", :value => "#{@resource_hash[:posted_by]}")
         
         %div.form-group
           = label :resource, :description, 'Description', :class => "control-label"
@@ -46,8 +46,6 @@
 
 
         = submit_tag 'Submit', :class => "btn btn-primary"
-        %a{:href=>subjects_path()} 
-          =button_tag "Cancel", :type => 'button'
 
 - content_for :javascript do
   = javascript_include_tag '//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js'

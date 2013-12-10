@@ -1,5 +1,6 @@
 class ReviewsController < ApplicationController
   def create
+    params[:review][:dr_user_id] = current_user.uid
     @resource = Resource.find(params[:resource_id])
     @review = @resource.reviews.new(params[:review])
     if !@review.valid?

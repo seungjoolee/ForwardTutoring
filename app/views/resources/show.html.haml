@@ -46,11 +46,11 @@
 
         %div.info
           %span Posted By:
-          = @resource.posted_by
-
-        %a{:href=> edit_resource_path(@resource.id)} Edit
-        %p
-        = link_to 'Delete', resource_path(@resource.id), :confirm => 'Are you sure?', :method => :delete
+          =@dr_user.name
+        %br
+        - if current_user == @dr_user or is_admin
+          %a.btn.btn-primary{:href=> edit_resource_path(@resource.id), :style=>"display: inline-block;"} Edit
+          = link_to 'Delete', resource_path(@resource.id), :confirm => 'Are you sure?', :method => :delete, :class => "btn btn-danger", :style=>"display: inline-block;"
 
       %div.divider
 
@@ -62,20 +62,17 @@
               - if review.anonymous
                 %div.name= "Anonymous"
               - else
-                %div.name= review.user
+                %div.name= DrUser.find(review.dr_user_id).name
               %div.rateit{ "data-rateit-value"=>"#{review.rating}", "data-rateit-ispreset"=>"true", "data-rateit-readonly"=>"true" }
               %div.content
                 = review.content
-              %p
-              = link_to 'Delete', resource_review_path(@resource.id, review.id), :confirm => 'Are you sure?', :method => :delete
+              - if current_user == DrUser.find(review.dr_user_id)
+                %br
+                = link_to 'Delete', resource_review_path(@resource.id, review.id), :confirm => 'Are you sure?', :method => :delete
 
         %div#add-review.well
           %dov.title Add Review
           = form_for([@resource, @resource.reviews.build]) do |f|
-            %div.group
-              = f.label :user
-              %br
-              %input#review_user.form-control{:name => "review[user]", :type=>"text", :value => "#{flash[:review_user]}"}
             %div.group
               = f.label :rating
               %br

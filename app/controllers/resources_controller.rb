@@ -45,8 +45,9 @@ before_filter :require_login, :only => [:new, :edit, :update]
     end
     @topic = Topic.find(params[:resource][:topic_id])
     # @resource = Resource.new(params[:resource])
+    params[:resource][:dr_user_id] = current_user.uid
      @resource = @topic.resources.new(params[:resource])
-    if !@resource.valid?
+    if !@resource.valid? && is_tutor
       flash[:notice] = @resource.errors.full_messages
         redirect_to new_resource_path(params[:resource]) and return
    else
@@ -93,6 +94,7 @@ before_filter :require_login, :only => [:new, :edit, :update]
   def show
     begin
     @resource = Resource.find(params[:id])
+    @dr_user = DrUser.find(@resource.dr_user_id)
     rescue
       flash[:notice] = "This resource does not exist"
       redirect_to subjects_path
