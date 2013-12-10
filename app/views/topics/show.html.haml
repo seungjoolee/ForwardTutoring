@@ -29,3 +29,5 @@
                     = resource.title
                   \:
                   = getDescriptionSummary(resource.description)
+            - if @topic.resources.empty?
+              <i>No resources currently exist</i>
