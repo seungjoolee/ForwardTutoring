@@ -1,0 +1,30 @@
+-#REDUNDANT DO NOT USE
+- content_for :stylesheets do
+  = stylesheet_link_tag 'new'
+
+%div#form-container.container
+  %div.row
+    %div.content-wrapper.col-md-10.col-md-offset-1
+      %div.container-header
+        Log In
+
+      - if flash[:notice]
+        %div.alert.alert-danger
+          = flash[:notice]
+
+      = form_tag sessions_path do
+        %div.form-group
+          = label :session, :name, 'Username', :class => "control-label"
+          - if flash[:name]
+            = text_field :session, 'name', :class => "form-control", :placeholder => "name@email.com", :value => "#{flash[:name]}"
+          - else
+            = text_field :session, 'name', :class => "form-control", :placeholder => "name@email.com"
+
+        %div.form-group
+          = label :session, :password, 'Password', :class => "control-label"
+          = password_field :session, 'password', :class => "form-control", :placeholder => ""
+
+        = submit_tag 'Sign In', :class => "btn btn-primary"
+
+
+
