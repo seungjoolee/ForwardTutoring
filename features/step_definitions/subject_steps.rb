@@ -25,5 +25,8 @@ science = Subject.create(:title => "Science")
                         pass: "a6957055e16a029de615583f3029e7ae",
                         name: "Tutor",
                         uid: 10)
+  puts user.id
+  puts "=====2"
   DrUsersRole.create!(uid: user.uid, rid: 5)
+
 end

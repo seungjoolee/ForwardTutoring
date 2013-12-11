@@ -95,6 +95,9 @@ before_filter :require_login, :only => [:new, :edit, :update]
     begin
     @resource = Resource.find(params[:id])
     @dr_user = DrUser.where(:uid => @resource.dr_user_id).first
+
+
+
     rescue
       flash[:notice] = "This resource does not exist"
       redirect_to subjects_path
