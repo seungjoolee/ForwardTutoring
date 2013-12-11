@@ -23,7 +23,8 @@ Background: resources have been added to database
 Scenario: Post review under basic Algebra
   Given I am logged in
   Then I should be on the subjects page
-  Given I am logged in
+  When I follow "Log In"
+  Then I should be on the login page
   Then I should see "Logged in as Tutor"
   Given I am on the details resource page for "Basic Algebra"
   Then I should be on the details resource page for "Basic Algebra"
