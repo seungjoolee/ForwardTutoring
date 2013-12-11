@@ -28,7 +28,7 @@ Given /the following resources exist/ do |resources_table|
   resources_table.hashes.each do |resource|
     resource[:topic_id] = Topic.find_by_title(resource[:topic]).id
     resource.delete('topic')
-    resource[:dr_user_id] = 9000
+    resource[:dr_user_id] = DrUser.where(:uid => 10).first.id
     Resource.create!(resource)
   end
 end
@@ -37,6 +37,7 @@ Given /the following reviews exist/ do |reviews_table|
   reviews_table.hashes.each do |review|
     review[:resource_id] = Resource.find_by_title(review[:resource]).id
     review.delete('resource')
+    review[:dr_user_id] = DrUser.where(:uid => 10).first.id
     Review.create!(review)
   end
 end

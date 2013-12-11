@@ -46,7 +46,8 @@
 
         %div.info
           %span Posted By:
-          =@dr_user.name
+          -if @dr_user
+            =@dr_user.name
         %br
         - if current_user == @dr_user or is_admin
           %a.btn.btn-primary{:href=> edit_resource_path(@resource.id), :style=>"display: inline-block;"} Edit
