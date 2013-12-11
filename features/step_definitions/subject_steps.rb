@@ -23,7 +23,6 @@ science = Subject.create(:title => "Science")
 
   user = DrUser.create!(mail: "Tutor", pass: "a6957055e16a029de615583f3029e7ae",
                 name: "Tutor")
-  user.uid = user.id
+  user.update_attribute(:uid, user.id)
   DrUsersRole.create!(id: user.id, uid: user.uid, rid: 5)
-
 end

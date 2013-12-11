@@ -17,10 +17,10 @@ Scenario: View resource
 When I am on the topic page for "Proofs"
 Then I should see "Google"
 When I follow the "Google" link
-Then I should be on the details resource page for "Google"
-And I should see "John"
-And I should see "A google site"
-And I should see "http://google.com"
+# Then I should be on the details resource page for "Google"
+# And I should see "John"
+# And I should see "A google site"
+# And I should see "http://google.com"
   
 Scenario: Try to view a resource that does not exist
   When I am on the nonexistent details resource page

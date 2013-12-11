@@ -37,6 +37,9 @@ module NavigationHelpers
     when /^the Admin page$/
       '/admin/'
 
+    when /^the login page$/
+      log_in_path
+
     when /^the new resource page$/
       new_resource_path
 
