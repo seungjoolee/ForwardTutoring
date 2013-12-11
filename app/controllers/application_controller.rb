@@ -6,7 +6,7 @@ class ApplicationController < ActionController::Base
   private
 
   def current_user
-  	@current_user ||= DrUser.find(session[:user_uid]) if session[:user_uid]
+  	@current_user ||= DrUser.where(:uid => session[:user_uid]).first if session[:user_uid]
   end
 
 	def is_tutor

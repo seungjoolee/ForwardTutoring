@@ -21,8 +21,9 @@ science = Subject.create(:title => "Science")
   chemistry = science.fields.create(:title => "Chemistry")
   physics = science.fields.create(:title => "Physics")
 
-  user = DrUser.create!(mail: "Tutor", pass: "a6957055e16a029de615583f3029e7ae",
-                name: "Tutor")
-  user.update_attribute(:uid, user.id)
+  user = DrUser.create!(mail: "Tutor", 
+                        pass: "a6957055e16a029de615583f3029e7ae",
+                        name: "Tutor",
+                        uid: 10)
   DrUsersRole.create!(id: user.id, uid: user.uid, rid: 5)
 end
