@@ -10,6 +10,10 @@ module WithinHelpers
 end
 World(WithinHelpers)
 
+When /I pressy "(.*)"$/ do |id|
+  find(id).click
+end
+
 Given /^(?:|I )am on (.+)$/ do |page_name|
   visit path_to(page_name)
 end

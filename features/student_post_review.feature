@@ -26,16 +26,13 @@ Scenario: Post review under basic Algebra
   
   Then I should see "Logged in as Tutor"
   Given I am on the details resource page for "Basic Algebra"
-  # Then I should see "Hello"
-  # Then I should be on the details resource page for "Basic Algebra"
-  # When I fill in "review_content" with "Hi" 
-  # And I press "Submit"
-  # Then I should see "Keith"
-  # Then I should see "Hi"
-
+  Then I should be on the details resource page for "Basic Algebra"
+  When I fill in "review_content" with "Hi" 
+  And I press "Submit"
+  Then I should see "Hi"
   
 Scenario: Post blank review under basic Algebra
   Given I am on the details resource page for "Basic Algebra"
-  #And I press "Submit"
-  #Then I should see "Content should not be blank"
+  And I press "Submit"
+  Then I should see "Content should not be blank"
 

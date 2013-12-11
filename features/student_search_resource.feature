@@ -8,6 +8,7 @@ Background: resources have been added to database
 Given the subjects are set up
   And I am logged in
 
+
         And the following resources exist: 
   | title    |link              | description   | topic  |
   | Google   | http://google.com | A google site | Proofs |
