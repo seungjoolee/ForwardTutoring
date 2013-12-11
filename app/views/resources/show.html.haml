@@ -62,11 +62,11 @@
               - if review.anonymous
                 %div.name= "Anonymous"
               - else
-                %div.name= DrUser.find(review.dr_user_id).name
+                %div.name= DrUser.where(:uid => review.dr_user_id).first.name
               %div.rateit{ "data-rateit-value"=>"#{review.rating}", "data-rateit-ispreset"=>"true", "data-rateit-readonly"=>"true" }
               %div.content
                 = review.content
-              - if current_user == DrUser.find(review.dr_user_id)
+              - if current_user == DrUser.where(:uid => review.dr_user_id).first
                 %br
                 = link_to 'Delete', resource_review_path(@resource.id, review.id), :confirm => 'Are you sure?', :method => :delete
 
