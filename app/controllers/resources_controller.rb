@@ -64,7 +64,7 @@ before_filter :require_login, :only => [:new, :edit, :update]
       @resource = Resource.find(params[:id])
       @resource_hash[:title] = @resource.title
       @resource_hash[:description] = @resource.description
-      @resource_hash[:posted_by] = @resource.posted_by
+      # @resource_hash[:posted_by] = @resource.posted_by
       @resource_hash[:link] = @resource.link
       @resource_hash[:topic_id] = @resource.topic_id
       @topics = Topic.all(:include => :field)

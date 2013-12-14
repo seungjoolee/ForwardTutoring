@@ -24,17 +24,12 @@
         %div.form-group
           = label :resource, :title, 'Title*', :class => "control-label"
           = text_field :resource, 'title', :class => "form-control", :placeholder => "Algebra for 8th Grade", :value => "#{@resource_hash[:title]}"
-        
-        %div.form-group
-          = label :resource, :posted_by, 'Posted by ', :class => "control-label"
-          = text_field( :resource, 'posted_by', :class => "form-control", :placeholder => "John Smith", :value => "#{@resource_hash[:posted_by]}")
-        
         %div.form-group
           = label :resource, :description, 'Description', :class => "control-label"
           = text_area :resource, 'description', :class => "form-control", :rows => "3", :placeholder => "A short descrition of your resource", :value => @resource_hash[:description]
 
         %div.form-group
-          = label :resource, :link, 'Post a Website Link', :class => "control-label"
+          = label :resource, :link, 'Website URL', :class => "control-label"
           = text_field :resource, 'link', :class => "form-control", :rows => "3", :placeholder => "http://en.wikipedia.org/wiki/Geometry", :value => @resource_hash[:link]
         %div
           Or

@@ -15,8 +15,7 @@ Background: resources table is populated
 Scenario: Successful Edit Resource
  When I am on the details resource page for "Google"
  Then I am on the details resource page for "Google"
- When I pressy "#edit_id"
- Then I should see "Hello"
+ When I follow "Edit"
  Then I should be on the edit resource page for "Google"
 
  When I fill in "resource_description" with "Hello world"
