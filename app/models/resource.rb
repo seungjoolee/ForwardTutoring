@@ -4,8 +4,11 @@ class Resource < ActiveRecord::Base
   before_validation :process_link
 
   #has_attached_file :pdf , url: "/pdfs/:id", default_url: ""
-  has_attached_file :pdf , url: "/pdfs/:hash.:extension",
-  default_url: "",:hash_secret => "tEsZNIU7mRszWVwfROKmnVH72cZPxcbYDzxvKzQMalTk83XFiJp0ncwoKJiQInfNWPnVbIhhoOKqezLGpKTi1NkoW6vYCKaqD4peZuLsxxrqnaatyCWQnEYqQ9J5UZpg2m6iLG1QD6TI8zDVfmnVR3ZcqLdwsDOxafxlrRlxnQVl82yRjgzhXAYHYezmiJNwosGt7ij2g"
+  has_attached_file :pdf,
+  url: "/pdfs/:hash.:extension",
+  path: "#{Rails.root}/public/pdfs/:hash.:extension",
+  default_url: "",
+  :hash_secret => "tEsZNIU7mRszWVwfROKmnVH72cZPxcbYDzxvKzQMalTk83XFiJp0ncwoKJiQInfNWPnVbIhhoOKqezLGpKTi1NkoW6vYCKaqD4peZuLsxxrqnaatyCWQnEYqQ9J5UZpg2m6iLG1QD6TI8zDVfmnVR3ZcqLdwsDOxafxlrRlxnQVl82yRjgzhXAYHYezmiJNwosGt7ij2g"
 
   validates_attachment_size :pdf, :less_than => 10.megabytes
   validates_attachment_content_type :pdf, :content_type => ["text/plain",
