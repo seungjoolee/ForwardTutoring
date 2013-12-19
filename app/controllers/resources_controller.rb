@@ -66,6 +66,7 @@ before_filter :require_login, :only => [:new, :edit, :update]
       @resource_hash[:description] = @resource.description
       # @resource_hash[:posted_by] = @resource.posted_by
       @resource_hash[:link] = @resource.link
+      @resource_hash[:pdf_file_name] = @resource.pdf_file_name
       @resource_hash[:topic_id] = @resource.topic_id
       @topics = Topic.all(:include => :field)
       @grouped_options = @topics.inject({}) do |options, topic|
@@ -76,14 +77,26 @@ before_filter :require_login, :only => [:new, :edit, :update]
       flash[:notice] = "This resource does not exist"
       redirect_to subjects_path
     end
-    end
+  end
 
   def update
     @resource = Resource.find params[:id]
     begin
-    @resource.update_attributes!(params[:resource])
-    flash[:notice] = ["#{@resource.title} was successfully updated."]
-    redirect_to resource_path(@resource) and return
+      if params[:is_file] == "true"
+        is_file = true
+      else
+        is_file = false
+      end
+      @resource.attributes = params[:resource]
+      if is_file
+        @resource.attributes = {link: ""}
+      else
+        @resource.pdf.clear
+      end
+      @resource.save
+
+      flash[:notice] = ["#{@resource.title} was successfully updated."]
+      redirect_to resource_path(@resource) and return
     rescue
       flash[:notice] = @resource.errors.full_messages
       redirect_to edit_resource_path(params[:resource]) and return

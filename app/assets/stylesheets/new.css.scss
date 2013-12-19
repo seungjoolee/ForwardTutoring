@@ -19,5 +19,34 @@
       width: 50%;
       min-width: 400px;
     }
+    .descriptor {
+      font-weight: bold;
+      margin-bottom: 0px;
+    }
+    .sub-descriptor {
+      font-weight: 300;
+    }
+    #resource-type-group {
+      margin-top: 10px;
+      margin-bottom: 10px;
+
+      .btn {
+        width: 75px;
+      }
+    }
+    #link-group {
+      display: none;
+    }
+    #file-group {
+      display: none;
+
+      input {
+        margin-top: 10px;
+      }
+    }
+    .submit-buttons {
+      display: none;
+      margin-top: 20px;
+    }
   }
 } 

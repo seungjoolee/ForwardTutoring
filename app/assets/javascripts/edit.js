@@ -3,7 +3,8 @@ var SelectFile = function() {
 	$("#select-link").removeClass("active");
 	$("#file-group").show();
 	$("#select-file").addClass("active");
-	$(".submit-buttons").show();
+
+	$("#is_file").val(true);	
 }
 
 var SelectLink = function() {
@@ -11,9 +12,14 @@ var SelectLink = function() {
 	$("#select-file").removeClass("active");
 	$("#link-group").show();
 	$("#select-link").addClass("active");
-	$(".submit-buttons").show();
+
+	$("#is_file").val(false);
 }
 
-$(function(){
-    $("#resource_topic_id").chosen();
-});
+
+$(".submit-buttons").show();
+if (resourceHash.link.length > 0) {
+	SelectLink();
+} else {
+	SelectFile();
+}

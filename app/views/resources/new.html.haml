@@ -31,20 +31,28 @@
         
         %div.form-group
           = label :resource, :description, 'Description', :class => "control-label"
-          = text_area :resource, 'description', :class => "form-control", :rows => "3", :placeholder => "A short descrition of your resource", :value => @resource_hash[:description]
+          = text_area :resource, 'description', :class => "form-control", :rows => "3", :placeholder => "A short description of your resource", :value => @resource_hash[:description]
 
-        %div.form-group
-          = label :resource, :link, 'Website URL', :class => "control-label"
-          = text_field :resource, 'link', :class => "form-control", :rows => "3", :placeholder => "http://en.wikipedia.org/wiki/Geometry", :value => @resource_hash[:link]
-        %div
-          Or 
-        %br
-        %div.form-group
-          = label :resource, :pdf, 'Upload a file', :class => "control-label"
+        %div.descriptor
+          Resource Type
+        %div.sub-descriptor
+          Please select only one:
+        %div#resource-type-group.btn-group
+          %button#select-file.btn.btn-default{:type => "button", :onclick => "SelectFile()"}
+            File
+          %button#select-link.btn.btn-default{:type => "button", :onclick => "SelectLink()"}
+            Link
+
+        %div.form-group#file-group
+          = label :resource, :pdf, 'Upload a file', :class => "control-label, descriptor"
           = file_field :resource, 'pdf'
 
-
-        = submit_tag 'Submit', :class => "btn btn-primary"
+        %div.form-group#link-group
+          = label :resource, :link, 'Website URL', :class => "control-label"
+          = text_field :resource, 'link', :class => "form-control", :rows => "3", :placeholder => "http://en.wikipedia.org/wiki/Geometry", :value => @resource_hash[:link]
+        
+        %div.submit-buttons
+          = submit_tag 'Submit', :class => "btn btn-primary"
 
 - content_for :javascript do
   = javascript_include_tag '//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js'
