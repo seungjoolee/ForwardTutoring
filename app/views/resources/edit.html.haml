@@ -24,31 +24,42 @@
         %div.form-group
           = label :resource, :title, 'Title*', :class => "control-label"
           = text_field :resource, 'title', :class => "form-control", :placeholder => "Algebra for 8th Grade", :value => "#{@resource_hash[:title]}"
-        
-        %div.form-group
-          = label :resource, :posted_by, 'Posted by ', :class => "control-label"
-          = text_field( :resource, 'posted_by', :class => "form-control", :placeholder => "John Smith", :value => "#{@resource_hash[:posted_by]}")
-        
         %div.form-group
           = label :resource, :description, 'Description', :class => "control-label"
           = text_area :resource, 'description', :class => "form-control", :rows => "3", :placeholder => "A short descrition of your resource", :value => @resource_hash[:description]
 
-        %div.form-group
-          = label :resource, :link, 'Post a Website Link', :class => "control-label"
-          = text_field :resource, 'link', :class => "form-control", :rows => "3", :placeholder => "http://en.wikipedia.org/wiki/Geometry", :value => @resource_hash[:link]
-        %div
-          Or
-        %br
-        %div.form-group
-          = label :resource, :pdf, 'Upload a file', :class => "control-label"
+        %div.descriptor
+          Resource Type
+        %div.sub-descriptor
+          Please select only one:
+        %div#resource-type-group.btn-group
+          %button#select-file.btn.btn-default{:type => "button", :onclick => "SelectFile()"}
+            File
+          %button#select-link.btn.btn-default{:type => "button", :onclick => "SelectLink()"}
+            Link
+
+        %div.form-group#file-group
+          = label :resource, :pdf, 'Upload a file', :class => "control-label, descriptor"
+          - if !@resource_hash[:pdf_file_name].nil?
+            %div.sub-descriptor
+              Current attachment: 
+              = @resource_hash[:pdf_file_name]
           = file_field :resource, 'pdf'
 
+        %div.form-group#link-group
+          = label :resource, :link, 'Website URL', :class => "control-label"
+          = text_field :resource, 'link', :class => "form-control", :rows => "3", :placeholder => "http://en.wikipedia.org/wiki/Geometry", :value => @resource_hash[:link]
 
-        = submit_tag 'Submit', :class => "btn btn-primary"
-        %a{:href=>resource_path(@resource)} 
-          =button_tag "Cancel", :type => 'button'
+        = hidden_field_tag "is_file"
+
+        %div.submit-buttons
+          = submit_tag 'Submit', :class => "btn btn-primary"
+          %a{:href=>resource_path(@resource)} 
+            = button_tag "Cancel", :type => 'button', :class => "btn btn-default"
 
 - content_for :javascript do
+  :javascript
+    window.resourceHash = #{@resource_hash.to_json};
   = javascript_include_tag '//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js'
   = javascript_include_tag 'chosen.jquery.min'
   = javascript_include_tag 'edit'

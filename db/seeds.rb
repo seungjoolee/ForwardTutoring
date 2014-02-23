@@ -32,6 +32,10 @@ science = Subject.create(:title => "Science")
   chemistry = science.fields.create(:title => "Chemistry")
   physics = science.fields.create(:title => "Physics")
 
+admin = AdminUser.create(:email => "admin@example.com", :password => "password", :password_confirmation => "password")
+tutor = DrUser.create(:mail => "Tutor", :pass => "a6957055e16a029de615583f3029e7ae", :uid => "1", :name => "Tutor")
+role = DrUsersRole.create(id: "1", uid: "1", rid: 5)
+
 #history = Subject.create(:title => "History")
 #english = Subject.create(:title => "English")
 #foreign_languages = Subject.create(:title => "Foreign Languages")

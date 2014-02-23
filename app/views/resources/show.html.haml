@@ -49,9 +49,9 @@
           -if @dr_user
             =@dr_user.name
         %br
-        -# if current_user == @dr_user or is_admin
-        %a#edit_id{:href=> edit_resource_path(@resource.id)} Edit
-        = link_to 'Delete', resource_path(@resource.id), :confirm => 'Are you sure?', :method => :delete, :class => "btn btn-danger", :style=>"display: inline-block;"
+        -if current_user == @dr_user or is_admin
+          %a#edit_id{:class => "btn btn-primary", :style=>"display: inline-block; width: 80px;", :href=> edit_resource_path(@resource.id)} Edit
+          = link_to 'Delete', resource_path(@resource.id), :confirm => 'Are you sure?', :method => :delete, :class => "btn btn-danger", :style=>"display: inline-block; width: 80px;"
 
       %div.divider
 
