@@ -29,8 +29,10 @@ before_filter :require_login, :only => [:new, :edit, :update]
 
     @topics = Topic.all(:include => :field)
     @grouped_options = @topics.inject({}) do |options, topic|
-      (options[topic.field.title] ||= []) << [topic.title, topic.id]
-      options
+      if not topic.field.nil?
+      	(options[topic.field.title] ||= []) << [topic.title, topic.id]
+      	options
+      end
     end
     @resource_hash[:topic_id] = params[:topic_id]
     # @resource_hash[:category] = params[:category]
