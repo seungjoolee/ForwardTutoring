@@ -29,13 +29,16 @@ before_filter :require_login, :only => [:new, :edit, :update]
 
     @topics = Topic.all(:include => :field)
     @grouped_options = @topics.inject({}) do |options, topic|
-      if not topic.nil? and not topic.field.nil? and not options.nil? and not topic.field.title.nil?
+      #puts options.to_s
+      if not options.nil? and not topic.field.title.nil?
+        #puts options.to_s
         if not options[topic.field.title]
           options[topic.field.title] = []
         end
         options[topic.field.title] << [topic.title, topic.id]
       	#(options[topic.field.title] ||= []) << [topic.title, topic.id]
-      	options
+      	print options.to_s
+        options
       end
     end
     @resource_hash[:topic_id] = params[:topic_id]
