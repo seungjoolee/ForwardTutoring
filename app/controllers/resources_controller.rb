@@ -31,10 +31,10 @@ before_filter :require_login, :only => [:new, :edit, :update]
     @grouped_options = @topics.inject({}) do |options, topic|
       #puts options.to_s
       
-      puts topic.to_s
-      puts topic.field.to_s
-      puts topic.field.title.to_s
-      puts options.to_s
+      logger.info topic.to_s
+      logger.info topic.field.to_s
+      logger.info topic.field.title.to_s
+      logger.info options.to_s
 
       if options and topic and topic.field and topic.field.title
         #puts options.to_s
