@@ -36,7 +36,7 @@ before_filter :require_login, :only => [:new, :edit, :update]
       puts topic.field.title.to_s
       puts options.to_s
 
-      if not options.nil? and not topic.field.title.nil?
+      if options and topic and topic.field and topic.field.title
         #puts options.to_s
         if not options[topic.field.title]
           options[topic.field.title] = []
