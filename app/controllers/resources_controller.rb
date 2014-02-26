@@ -30,7 +30,11 @@ before_filter :require_login, :only => [:new, :edit, :update]
     @topics = Topic.all(:include => :field)
     @grouped_options = @topics.inject({}) do |options, topic|
       if not topic.field.nil?
-      	(options[topic.field.title] ||= []) << [topic.title, topic.id]
+        if not options[topic.field.title]
+          options[topic.field.title] = []
+        end
+        options[topic.field.title] << [topic.title, topic.id]
+      	#(options[topic.field.title] ||= []) << [topic.title, topic.id]
       	options
       end
     end
