@@ -18,7 +18,7 @@
         %div.form-group
           = label :resource, :topic, 'Topic*', :class => "control-label"
           %br
-          = select_tag 'resource_topic_id', grouped_options_for_select(@grouped_options, @resource_hash[:topic_id]), :include_blank => true , :'data-placeholder' => 'Choose a Topic', :name => 'resource[topic_id]'
+          = select_tag 'resource_topic_id', grouped_options_for_select(@grouped_options, @resource_hash[:topic_id]), :include_blank => true , :'data-placeholder' => 'Choose a Topic', :name => 'resource[topic_id]', :'class' => 'chosen-select'
           =# select :resource, :topic_id, Topic.all.collect {|t| [t.title, t.id] }
 
         %div.form-group

@@ -31,20 +31,20 @@ before_filter :require_login, :only => [:new, :edit, :update]
     @grouped_options = @topics.inject({}) do |options, topic|
       #puts options.to_s
 
-      if options and topic and topic.field and topic.field.title
+      #if options and topic and topic.field and topic.field.title
         #logger.info topic.to_s
         #logger.info topic.field.to_s
         #logger.info topic.field.title.to_s
         #logger.info options.to_s
         #puts options.to_s
-        if not options[topic.field.title]
-          options[topic.field.title] = []
-        end
-        options[topic.field.title] << [topic.title, topic.id]
-      	#(options[topic.field.title] ||= []) << [topic.title, topic.id]
+        #if not options[topic.field.title]
+        #  options[topic.field.title] = []
+        #end
+        #options[topic.field.title] << [topic.title, topic.id]
+      
       	#print options.to_s
-        options
-      end
+      (options[topic.field.title] ||= []) << [topic.title, topic.id]
+      options
     end
     @resource_hash[:topic_id] = params[:topic_id]
     # @resource_hash[:category] = params[:category]
